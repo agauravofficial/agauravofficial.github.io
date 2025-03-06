@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zena</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: background-color 0.3s ease-in-out;
+            height: 167px;
+        }
+
+        .navbar .logo {
+            background: url('./assets/zena_logo.png');
+            font-size: 24px;
+            font-weight: bold;
+            width: 179px;
+            height: 128px;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar ul li {
+            margin-left: 20px;
+        }
+
+        .navbar ul li a {
+            color: #001436;
+            text-decoration: none;
+            padding: 5px 10px;
+            font-family: Kanit;
+            font-weight: 300;
+            font-size: 24px;
+            line-height: 71px;
+            letter-spacing: 0px;
+            text-align: center;
+            vertical-align: middle;
+
+        }
+
+        .navbar ul li a:hover {
+            border-radius: 5px;
+            text-decoration: underline;
+        }
+
+        .navbar ul li a.active {
+            border-radius: 5px;
+            text-decoration: underline;
+        }
+
+        .navbar .button {
+            background-color: #9CDA6E;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .navbar .button:hover {
+            background-color: #78b946;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            height: 3px;
+            width: 25px;
+            background-color: #000;
+            margin: 4px;
+            transition: all 0.3s;
+        }
+
+        .close-btn {
+            display: none;
+            color: white;
+            font-size: 30px;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+        }
+
+        section:not(:first-of-type) {
+            margin-top: 128px;
+            padding: 60px 20px;
+            border-bottom: 1px solid #ddd;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            position: relative;
+            z-index: 1;
+        }
+
+        section:not(:first-of-type)::before {
+            content: "";
+            position: absolute;
+            top: -128px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('./assets/section_backgroud.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.05;
+            /* Set the opacity of the background image */
+            z-index: -1;
+            /* Ensure the pseudo-element is behind the content */
+        }
+
+
+        section.visible {
+            opacity: 1;
+        }
+
+        #leadForm {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(236, 236, 236);
+            /* Opaque background color */
+            z-index: 1001;
+            justify-content: center;
+            align-items: center;
+            color: #333;
+            text-align: center;
+        }
+
+        #leadForm .form-content {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            width: 400px;
+            max-width: 90%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #leadForm .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 30px;
+            color: #333;
+            cursor: pointer;
+        }
+
+        #leadForm input,
+        #leadForm button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        #leadForm input[type="number"] {
+            width: auto;
+        }
+
+        #leadForm button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #leadForm button:hover {
+            background-color: #45a049;
+        }
+
+        /* Flexbox styling for fields in the same row */
+        .form-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .form-row input {
+            width: 48%;
+            /* Ensures two inputs are side by side with some spacing */
+        }
+
+        #home {
+            background-color: #ECF2FB;
+        }
+
+        @media (max-width: 768px) {
+            .navbar ul {
+                flex-direction: column;
+                display: none;
+                width: 100%;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                padding-top: 20px;
+            }
+
+            .navbar ul:first-of-type {
+                margin-top: 128px;
+            }
+
+            .navbar ul li {
+                margin: 10px 0;
+                text-align: center;
+            }
+
+            .navbar.show ul {
+                display: flex;
+                background-color: #fff;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .navbar .button {
+                display: block;
+                margin-left: auto;
+                background-color: #9CDA6E;
+                ;
+            }
+
+            .close-btn {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="logo"></div>
+        <div class="close-btn">&times;</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#platform-advantage">Platform Advantage</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="button">Schedule Demo</button>
+    </nav>
+
+    <section id="home">
+        <h2>Home</h2>
+        <p>Welcome to our homepage! Here, you'll find the latest updates and news.</p>
+    </section>
+
+    <section id="about">
+        <h2>About</h2>
+        <p>Learn more about our company's mission, vision, and values.</p>
+    </section>
+
+    <section id="platform-advantage">
+        <h2>Platform Advantage</h2>
+        <p>Discover the unique advantages of our platform and how it can benefit you.</p>
+    </section>
+
+    <section id="team">
+        <h2>Team</h2>
+        <p>Meet the talented individuals behind our success.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Get in touch with us for any inquiries or support.</p>
+    </section>
+
+    <!-- Lead Form -->
+    <div id="leadForm">
+        <div class="form-content">
+            <span class="close-btn">&times;</span>
+            <h2>Lead Form</h2>
+            <form id="form" action="#">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required maxlength="100">
+
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone"
+                    pattern="^\+?[0-9]{1,4}?[-. ]?([0-9]{1,4})[-. ]?([0-9]{1,4})[-. ]?([0-9]{1,9})$" required>
+
+                <div class="form-row">
+                    <div>
+                        <label for="firstname">First Name:</label>
+                        <input type="text" id="firstname" name="firstname" required minlength="2" maxlength="100">
+                    </div>
+                    <div>
+                        <label for="lastname">Last Name:</label>
+                        <input type="text" id="lastname" name="lastname" required minlength="2" maxlength="100">
+                    </div>
+                </div>
+
+                <label for="company">Company:</label>
+                <input type="text" id="company" name="company" required minlength="5" maxlength="100">
+
+                <div class="form-row">
+                    <div>
+                        <label for="department">Department:</label>
+                        <input type="text" id="department" name="department">
+                    </div>
+                    <div>
+                        <label for="teamsize">Team Size:</label>
+                        <input type="number" id="teamsize" name="teamsize" min="0" max="50">
+                    </div>
+                </div>
+
+                <label for="insights">Signup for Insights:</label>
+                <input type="checkbox" id="insights" name="insights">
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to toggle the mobile menu
+        const hamburger = document.querySelector('.hamburger');
+        const navbar = document.querySelector('.navbar');
+        const closeButton = document.querySelector('.close-btn');
+        const leadFormCloseButton = leadForm.querySelector('.close-btn');
+
+        // Toggle menu open/close on hamburger click
+        hamburger.addEventListener('click', function () {
+            navbar.classList.toggle('show');
+        });
+
+        // Close the menu on close button click
+        closeButton.addEventListener('click', function () {
+            navbar.classList.remove('show');
+        });
+
+        // Open lead form on button click
+        const leadFormButton = document.querySelector('.navbar .button');
+        leadFormButton.addEventListener('click', function () {
+            leadForm.style.display = 'flex';
+            history.pushState({ leadFormOpen: true }, 'Lead Form Opened');
+        });
+
+        // Close lead form when the close button is clicked
+        leadFormCloseButton.addEventListener('click', function () {
+            leadForm.style.display = 'none';
+            history.back(); // Push the state back in history
+        });
+
+        // Close the lead form on Esc key press (Desktop)
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape') {
+                leadForm.style.display = 'none';
+                history.back(); // Push the state back in history
+            }
+        });
+
+        // Close the lead form on back button press (Mobile)
+        window.addEventListener('popstate', function (event) {
+            if (event.state && event.state.leadFormOpen) {
+                leadForm.style.display = 'none';
+            }
+        });
+
+        // Close the hamburger menu after navigation in mobile mode
+        const navLinks = document.querySelectorAll('.navbar ul li a');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', function () {
+                // Close the menu when a navigation link is clicked on mobile
+                if (window.innerWidth <= 768) {
+                    navbar.classList.remove('show');
+                }
+            });
+        });
+
+        // IntersectionObserver for fade-in effect on each section
+        const sections = document.querySelectorAll('section');
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Stop observing once the section is visible
+                }
+            });
+        }, { threshold: 0.5 }); // Trigger when 50% of the section is in view
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Smooth scrolling for anchors
+        const anchors = document.querySelectorAll('a[href^="#"]');
+        anchors.forEach((anchor, index) => {
+            if (index === 0) {
+                anchor.classList.add('active');
+            }
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                anchors.forEach(anchor => {
+                    anchor.classList.remove('active');
+                })
+                anchor.classList.add('active');
+                const link = this.getAttribute('href');
+                document.querySelector(link).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                const headerOffset = 128;
+                const elementPosition = document.getElementById(link.replace('#', '')).getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                if (index !== 0)
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+                else
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "smooth"
+                    });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
