@@ -308,8 +308,53 @@
             width: 60px;
         }
 
+        #about {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #about .about-section {
+            flex: 1;
+            text-align: center;
+            margin:40px;
+        }
+
+        #about .about-title {
+            font-family: Kanit;
+            font-weight: 400;
+            font-size: 50px;
+            line-height: 59px;
+            letter-spacing: -0.58px;
+            text-align: center;
+            vertical-align: middle;
+
+        }
+
+        #about .about-subtitle {
+            font-family: Kanit;
+            font-weight: 400;
+            font-size: 40px;
+            line-height: 24px;
+            letter-spacing: 0.42px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
         #about .about-zena-mission {
-            display: block;
+            display: flex;
+            gap:40px;
+            align-items: center; 
+        }
+
+        #about .about-para {
+            font-family: Kanit;
+            font-weight: 300;
+            font-size: 20px;
+            line-height: 48px;
+            letter-spacing: 0.42px;
+            vertical-align: middle;
+            text-align: justify;
+            text-justify: inter-word;
         }
 
         @media (max-width: 768px) {
@@ -417,19 +462,24 @@
     </section>
 
     <section id="about">
-        <div>The Zena Mission</div>
-        <div>Empowering Brand Managers</div>
-        <div>
-            <div class="about-zena-mission"></div>
-            Today’s brand managers face challenge: they are often stymied by too much data, too few insights, too many
-            tasks...and not enough resources to bring it all together.
-            Leveraging decades of our brand management expertise, we set out to solve this dilemma. Harnessing the
-            emerging power of artificial intelligence, we partnered with AI/ ML software experts to create a “virtual
-            assistant” platform that was custom designed for the needs of CPG brand managers. The result was Zena, a
-            transformative resource that expands every brand manager’s strategic, analytical and executional
-            capabilities.
+        <div class="about-section about-title">The Zena Mission</div>
+        <div class="about-section about-subtitle">Empowering Brand Managers</div>
+        <div class="about-section about-zena-mission">
+            <div class="about-para">
+                Today’s brand managers face challenge: they are often stymied by too much data, too few insights, too
+                many tasks...and not enough resources to bring it all together.
+                <br/>
+                Leveraging decades of our brand management expertise, we set out to solve this dilemma. Harnessing the
+                emerging power of artificial intelligence, we partnered with AI/ ML software experts to create a
+                “virtual
+                assistant” platform that was custom designed for the needs of CPG brand managers. The result was Zena, a
+                transformative resource that expands every brand manager’s strategic, analytical and executional
+                capabilities.
+                <br/>
+                As we like to say: “Zena was designed by brand managers, for brand managers.”
+            </div>
+            <img src="./assets/about-zena.png" />
 
-            As we like to say: “Zena was designed by brand managers, for brand managers.”
         </div>
     </section>
 
