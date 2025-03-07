@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zena</title>
     <style>
@@ -116,7 +117,7 @@
             z-index: 1;
         }
 
-        section:not(:first-of-type)::before {
+        section:not(:is(:first-of-type, :last-of-type))::before {
             content: "";
             position: absolute;
             top: -128px;
@@ -132,6 +133,9 @@
             /* Ensure the pseudo-element is behind the content */
         }
 
+        section:last-of-type {
+            background: #1E1E1E;
+        }
 
         section.visible {
             opacity: 1;
@@ -217,7 +221,7 @@
             background-size: cover;
             height: 330px;
             position: absolute;
-            bottom: 30px;
+            bottom: 40px;
         }
 
         #home .home-top {
@@ -244,7 +248,7 @@
             flex-direction: column;
             text-align: center;
             align-items: center;
-            margin-right: -40%;
+            margin-left: 40%;
         }
 
         #home .home-detail {
@@ -316,7 +320,7 @@
         #about .about-section {
             flex: 1;
             text-align: center;
-            margin:40px;
+            margin: 40px;
         }
 
         #about .about-title {
@@ -342,8 +346,8 @@
 
         #about .about-zena-mission {
             display: flex;
-            gap:40px;
-            align-items: center; 
+            gap: 40px;
+            align-items: center;
         }
 
         #about .about-para {
@@ -356,6 +360,61 @@
             text-align: justify;
             text-justify: inter-word;
         }
+
+        #contact {
+            display: flex;
+            color: #fff;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        #contact .zena-contact-detail {
+            display: flex;
+            flex: 1;
+            width: 50%;
+            align-items: center;
+        }
+
+        #contact .zena-logo {
+            background: url('./assets/zena-title.png');
+            margin-top: 40px;
+            width: 327px;
+            height: 128px;
+        }
+
+        #contact .zena-contact-get-in-touch {
+            width: 50%;
+            font-family: Kanit;
+            font-weight: 400;
+            font-size: 55px;
+            line-height: 40px;
+            letter-spacing: -0.58px;
+            vertical-align: middle;
+            margin: 20px;
+
+        }
+
+        #contact .zena-contact-para {
+            margin-top: 20px;
+            font-family: 'Kanit', sans-serif;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 40px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        #contact .contact-footer {
+            flex: 1;
+            font-family: 'Kanit', sans-serif;
+            font-weight: 400;
+            font-size: 15px;
+            letter-spacing: -0.58px;
+            text-align: center;
+            vertical-align: middle;
+            width: 50%;
+        }
+
 
         @media (max-width: 768px) {
             .navbar ul {
@@ -468,14 +527,14 @@
             <div class="about-para">
                 Today’s brand managers face challenge: they are often stymied by too much data, too few insights, too
                 many tasks...and not enough resources to bring it all together.
-                <br/>
+                <br />
                 Leveraging decades of our brand management expertise, we set out to solve this dilemma. Harnessing the
                 emerging power of artificial intelligence, we partnered with AI/ ML software experts to create a
                 “virtual
                 assistant” platform that was custom designed for the needs of CPG brand managers. The result was Zena, a
                 transformative resource that expands every brand manager’s strategic, analytical and executional
                 capabilities.
-                <br/>
+                <br />
                 As we like to say: “Zena was designed by brand managers, for brand managers.”
             </div>
             <img src="./assets/about-zena.png" />
@@ -501,10 +560,20 @@
     </section>
 
     <section id="contact">
-        <h2>Contact</h2>
-        <p>Get in touch with us for any inquiries or support.</p>
+        <div class="zena-contact-detail">
+            <div class="zena-logo"></div>
+            <div class="zena-contact-get-in-touch">
+                Get In Touch
+                <div class="zena-contact-para">
+                    Brand Compass, LLC 10 West Road #1050Newton, PA 18940, United States
+                    <br />
+                     Brand Compass, LLC 10 West Road #1050, Newton, PA 18940, United States
+                    test@test.ai
+                </div>
+            </div>
+        </div>
+        <div class="contact-footer">Copyright © 2025 brandcompass.ai | Powered by brandcompass.ai</div>
     </section>
-
 
     <!-- Lead Form -->
     <div id="leadForm">
