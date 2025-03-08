@@ -73,15 +73,16 @@
 
         .navbar .button,
         #platform-advantage-5 .button {
-            background-color: #9CDA6E;
+            background-color: #5FDAF3;
             border: none;
             padding: 10px 20px;
             cursor: pointer;
             border-radius: 5px;
         }
 
-        .navbar .button:hover {
-            background-color: #78b946;
+        .navbar .button:hover,
+        #platform-advantage-5 .button:hover {
+            background-color: #6cbdce;
         }
 
         .hamburger {
@@ -118,22 +119,6 @@
             z-index: 1;
         }
 
-        section:not(:is(:first-of-type, :last-of-type))::before {
-            content: "";
-            position: absolute;
-            top: -128px;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: url('./assets/section_backgroud.png');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.05;
-            /* Set the opacity of the background image */
-            z-index: -1;
-            /* Ensure the pseudo-element is behind the content */
-        }
-
         section:last-of-type {
             background: #1E1E1E;
         }
@@ -154,23 +139,26 @@
             z-index: 1001;
             justify-content: center;
             align-items: center;
-            color: #333;
+            color: #001436;
             text-align: center;
         }
 
         #leadForm .form-content {
             background-color: #fff;
-            padding: 30px;
             border-radius: 8px;
-            width: 400px;
+            width: 50%;
             max-width: 90%;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            padding: 40px;
         }
 
-        #leadForm .close-btn {
+
+        #leadForm .close-btn,
+        #popup .close-btn {
             position: absolute;
-            top: 10px;
-            right: 10px;
+            top: 20px;
+            right: 100px;
             font-size: 30px;
             color: #333;
             cursor: pointer;
@@ -184,10 +172,7 @@
             margin: 10px 0;
             border-radius: 5px;
             border: 1px solid #ccc;
-        }
-
-        #leadForm input[type="number"] {
-            width: auto;
+            background-color: #D9D9D9;
         }
 
         #leadForm button {
@@ -214,27 +199,24 @@
         }
 
         #home {
-            background-color: #ECF2FB;
-        }
-
-        #home .home-background {
-            background: url('./assets/home-background.png');
-            width: 38%;
+            background: url('./assets/zena-hand.png');
             background-size: cover;
-            height: 330px;
-            position: absolute;
-            bottom: 43px;
         }
 
         #home .home-top {
-            background: url('./assets/zena-title.png');
             margin-top: 40px;
-            width: 327px;
-            height: 128px;
+            font-family: Kanit;
+            font-weight: 400;
+            font-size: 70px;
+            line-height: 24px;
+            letter-spacing: 0.42px;
+            text-align: center;
+            vertical-align: middle;
+
         }
 
         #home .home-title {
-            margin: 20px;
+            margin-top: 40px;
             font-family: Kanit;
             font-weight: 400;
             font-size: 50px;
@@ -250,17 +232,21 @@
             flex-direction: column;
             text-align: center;
             align-items: center;
-            margin-left: 40%;
+            color: #fff;
         }
 
         #home .home-detail {
-            background: url('./assets/zena-home.png');
-            width: 650px;
-            height: 360px;
+            margin-top: 100px;
+            display: flex;
+            width: 25%;
+            flex-direction: column;
+            align-self: self-start;
+            margin-left: 20%;
         }
 
         #home .home-detail-bottom {
-            margin: 20px;
+            margin-top: 100px;
+            margin-bottom: 60px;
             font-family: Kanit;
             font-weight: 400;
             font-size: 40px;
@@ -279,7 +265,7 @@
             width: 100%;
         }
 
-        #home .home-footer-content {
+        #home .home-detail-content {
             flex: 1;
             display: flex;
             align-items: center;
@@ -287,16 +273,15 @@
         }
 
 
-        #home .home-footer-content .item {
+        #home .home-detail-content .item {
             margin-top: 20px;
             display: flex;
             flex: 1;
-            flex-direction: column;
             text-align: center;
             align-items: center;
         }
 
-        #home .home-footer-content p {
+        #home .home-detail-content p {
             flex: 1;
             width: 50%;
             font-family: Kanit;
@@ -309,7 +294,7 @@
 
         }
 
-        #home .home-footer-content img {
+        #home .home-detail-content img {
             height: 60px;
             width: 60px;
         }
@@ -350,6 +335,8 @@
             display: flex;
             gap: 40px;
             align-items: center;
+            align-self: center;
+            width: 75%;
         }
 
         #about .about-para {
@@ -422,7 +409,8 @@
         #platform-advantage-2,
         #platform-advantage-3,
         #platform-advantage-4,
-        #platform-advantage-5, #team {
+        #platform-advantage-5,
+        #team {
             display: flex;
             align-items: center;
             flex-direction: column;
@@ -439,16 +427,23 @@
             font-weight: 400;
             font-size: 50px;
             line-height: 40px;
+            font-family: Kanit;
+            font-weight: 400;
+            font-size: 50px;
+            line-height: 59px;
+            letter-spacing: -0.58px;
+            text-align: center;
+            vertical-align: middle;
+
         }
 
-        #platform-advantage .advantage-subtitle {
+        .advantage-subtitle {
             margin-top: 20px;
             flex: 1;
             font-family: 'Kanit', sans-serif;
             font-weight: 400;
-            font-size: 15px;
+            font-size: 32px;
             vertical-align: middle;
-            width: 50%;
         }
 
         .advantage-brand {
@@ -458,6 +453,8 @@
             text-align: center;
             align-items: center;
             gap: 100px;
+            align-self: center;
+            width: 75%;
         }
 
         .advantage-brand img {
@@ -507,24 +504,95 @@
             border-radius: 12px;
         }
 
-        #team .advantage-brand-section{
+        #team .advantage-title {
+            margin-top: 100px;
+        }
+
+        #team .advantage-brand-section {
             display: flex;
-            gap:50px;
+            gap: 20px;
         }
 
         .team-bubble {
-            margin-top: 60px;
-            background-color: #fff;
+            margin-top: 100px;
+            margin-bottom: 100px;
+            background-color: #E4E4E4;
             padding: 25px;
             border-radius: 20px;
             flex: 1;
             font-family: Kanit;
             font-weight: 400;
-            font-size: 24px;
-            line-height: 25px;
+            font-size: 32px;
+            line-height: 59px;
             letter-spacing: -0.58px;
             text-align: center;
             vertical-align: middle;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        #popup .team-bubble {
+            text-align: left;
+            background-color: transparent;
+        }
+
+        #popup .team-bubble-container {
+            background-color: #E4E4E4;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-left: 25%;
+            margin-right: 25%;
+            border-radius: 20px;
+            padding: 20px;
+        }
+
+        .team-bubble img {
+            width: 250px;
+            height: 385px;
+        }
+
+        .team-bubble .member-designation {
+            font-size: 20px;
+            line-height: 20px;
+        }
+
+        #popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #D9D9D9;
+            padding: 25px;
+            border-radius: 20px;
+            flex: 1;
+            font-family: Kanit;
+            font-weight: 400;
+            font-size: 32px;
+            line-height: 59px;
+            letter-spacing: -0.58px;
+            text-align: center;
+            vertical-align: middle;
+            flex-direction: column;
+            z-index: 1001;
+        }
+
+        .popup-content {
+            display: flex;
+            flex: 1;
+        }
+
+        .member-details {
+            font-family: Kanit;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 24px;
+            letter-spacing: -0.58px;
+            vertical-align: middle;
+            text-align: justify;
 
         }
 
@@ -592,43 +660,40 @@
 
     <section id="home">
         <div class="home-section">
-            <div class="home-top"></div>
-
+            <div class="home-top">Zena</div>
             <div class="home-title">Your AI-Powered Brand Assistant</div>
-            <div class="home-detail"></div>
+            <div class="home-detail">
+                <div class="home-detail-content">
+                    <div class="item">
+                        <img src="./assets/home1.png" alt="Image 1">
+                        <p>Create a one-stop repository
+                            of brand data and history.</p>
+                    </div>
+                </div>
+                <div class="home-detail-content">
+                    <div class="item">
+                        <img src="./assets/home2.png" alt="Image 2">
+                        <p> Have intelligent conversations
+                            with your “brand assistant.”</p>
+                    </div>
+                </div>
+                <div class="home-detail-content">
+                    <div class="item">
+                        <img src="./assets/home3.png" alt="Image 3">
+                        <p>Unlock hidden patterns and insights
+                            in your brand’s data.</p>
+                    </div>
+                </div>
+                <div class="home-detail-content">
+                    <div class="item">
+                        <img src="./assets/home4.png" alt="Image 4">
+                        <p> Delegate time-consuming
+                            admistrative tasks.</p>
+                    </div>
+                </div>
+            </div>
             <div class="home-detail-bottom">Empowering Brand Managers
                 to Achieve More</div>
-        </div>
-        <div class="home-background"></div>
-        <div class="home-footer">
-            <div class="home-footer-content">
-                <div class="item">
-                    <img src="./assets/home1.png" alt="Image 1">
-                    <p>Create a one-stop repository
-                        of brand data and history.</p>
-                </div>
-            </div>
-            <div class="home-footer-content">
-                <div class="item">
-                    <img src="./assets/home2.png" alt="Image 2">
-                    <p> Have intelligent conversations
-                        with your “brand assistant.”</p>
-                </div>
-            </div>
-            <div class="home-footer-content">
-                <div class="item">
-                    <img src="./assets/home3.png" alt="Image 3">
-                    <p>Unlock hidden patterns and insights
-                        in your brand’s data.</p>
-                </div>
-            </div>
-            <div class="home-footer-content">
-                <div class="item">
-                    <img src="./assets/home4.png" alt="Image 4">
-                    <p> Delegate time-consuming
-                        admistrative tasks.</p>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -694,18 +759,20 @@
     <section id="platform-advantage-3">
         <div class="advantage-section">
             <div class="advantage-title">
-                Zena transforms your productivity
+                Zena Saves you Time!
             </div>
         </div>
         <div class="advantage-brand">
             <img src="./assets/zena-productivity.png" />
 
             <div class="advantage-brand-section">
-                <p class="advantage-brand-subpara">Let Zena handle mundane labor-intensive tasks
-                    like custom charts and reports - in a fraction of the time.
-                    Zena gets more from your data, and saves time in the process.
-                    Zena multiplies every
-                    brand manager’s capabilities.</p>
+                <p class="advantage-brand-subpara">
+                    Performs labor-intensive tasks in a fraction of the usual time.
+                    <br />
+                    Zena unlocks the full potential of your data while saving time in the process.
+                    <br />
+                    Zena multiplies every brand manager’s capabilities.
+                </p>
             </div>
         </div>
     </section>
@@ -736,13 +803,22 @@
     <section id="team">
         <div class="advantage-section">
             <div class="advantage-title">
-                What brand managers are saying.
+                Our Team
             </div>
             <div class="advantage-brand-section">
-                <div class="team-bubble">"Zena is like having asuper-intelligent brand assistant on call 24/7."</div>
-                <div class="team-bubble">"With Zena, I was able to complete a project in 15 minutes that normally takes
-                    methree hours."</div>
-                <div class="team-bubble">"With Zena plows through data in minutes to find my answers."</div>
+                <div class="team-bubble" onclick="showPopup('Avani Kanubaddi')"><img src='./assets/team-1.png' />Avani
+                    Kanubaddi<p class="member-designation">CEO and Founder</p>
+                </div>
+                <div class="team-bubble" onclick="showPopup('Doug Rogers')"><img src='./assets/team-2.png' />Doug Rogers
+                    <p class="member-designation">President and Co-founder</p>
+                </div>
+                <div class="team-bubble" onclick="showPopup('Lisa Buono')"><img src='./assets/team-3.png' />Lisa Buono<p
+                        class="member-designation">Chief Client Success Officer(CCSO)</p>
+                </div>
+                <div class="team-bubble" onclick="showPopup('Srinivas Raghavan')"><img
+                        src='./assets/team-4.png' />Srinivas Raghavan<p class="member-designation">Chief Technical
+                        Officer</p>
+                </div>
             </div>
         </div>
     </section>
@@ -763,11 +839,37 @@
         <div class="contact-footer">Copyright © 2025 brandcompass.ai | Powered by brandcompass.ai</div>
     </section>
 
+    <div id="popup">
+        <span class="close-btn" onclick="closePopup()">&times;</span>
+        <div class="advantage-section">
+            <div class="advantage-title">
+                Our Team
+            </div>
+            <div class="popup-content">
+                <div class="advantage-brand-section">
+                    <div class="team-bubble-container">
+                        <div class="team-bubble">
+
+                            <img src='' /><span id="name"></span>
+                            <p class="member-designation"></p>
+                        </div>
+                        <div class="member-details">
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    </div>
     <!-- Lead Form -->
     <div id="leadForm">
         <div class="form-content">
             <span class="close-btn">&times;</span>
-            <h2>Lead Form</h2>
+            <h2>Schedule a Demo</h2>
             <form id="form" action="#">
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required maxlength="100">
@@ -800,10 +902,11 @@
                         <input type="number" id="teamsize" name="teamsize" min="0" max="50">
                     </div>
                 </div>
+                <div class="form-row">
+                    <input type="checkbox" id="insights" name="insights">
 
-                <label for="insights">Signup for Insights:</label>
-                <input type="checkbox" id="insights" name="insights">
-
+                    <label for="insights">Signup for Insights:</label>
+                </div>
                 <button type="submit">Submit</button>
             </form>
         </div>
@@ -915,6 +1018,54 @@
                     });
             });
         });
+
+        const members = {
+            'Avani Kanubaddi': {
+                image: 'team-1.png',
+                designation: 'CEO and Founder',
+                details: `    Avani is the visionary force behind Zena, where he leads the company’s business strategy and product innovation. The driving concept behind Zena originated from Avani’s steadfast belief that Artificial Intelligence could transform brand management. He envisioned an AI-powered virtual brand assistant capable of enhancing the abilities of brand teams fivefold, tenfold, or even more. Today, Zena is revolutionizing how brands operate—making teams faster, smarter, and more adaptable in an ever-changing market. From conception to execution, Avani has guided the team’s development of Zena into a cutting-edge solution to provide brands with a true competitive advantage. 
+    Before launching Zena, Avani served as the President and COO of a biotech startup focused on AI-driven drug discovery in neuroscience. This experience deepened his interest in artificial intelligence and its potential to enhance human intelligence, a perspective he now applies to brand management. Avani’s passion for brand building spans decades. He started as a Brand Manager for Centrum, where he honed the art and science of nurturing iconic brands. Later, he co-founded a consumer healthcare company, building multiple brands from the ground up using classic brand management techniques. Having faced the daily challenges encountered by brand managers, Avani now leverages AI to empower brand teams with unmatched speed, efficiency, and strategic capability. 
+    Avani earned a BS in Marketing from Miami University and an MBA from Columbia University.`
+            },
+            'Doug Rogers': {
+                image: 'team-2.png',
+                designation: 'President and Co-Founder',
+                details: `    Avani is the visionary force behind Zena, where he leads the company’s business strategy and product innovation. The driving concept behind Zena originated from Avani’s steadfast belief that Artificial Intelligence could transform brand management. He envisioned an AI-powered virtual brand assistant capable of enhancing the abilities of brand teams fivefold, tenfold, or even more. Today, Zena is revolutionizing how brands operate—making teams faster, smarter, and more adaptable in an ever-changing market. From conception to execution, Avani has guided the team’s development of Zena into a cutting-edge solution to provide brands with a true competitive advantage. 
+    Before launching Zena, Avani served as the President and COO of a biotech startup focused on AI-driven drug discovery in neuroscience. This experience deepened his interest in artificial intelligence and its potential to enhance human intelligence, a perspective he now applies to brand management. Avani’s passion for brand building spans decades. He started as a Brand Manager for Centrum, where he honed the art and science of nurturing iconic brands. Later, he co-founded a consumer healthcare company, building multiple brands from the ground up using classic brand management techniques. Having faced the daily challenges encountered by brand managers, Avani now leverages AI to empower brand teams with unmatched speed, efficiency, and strategic capability. 
+    Avani earned a BS in Marketing from Miami University and an MBA from Columbia University.`
+            },
+            'Lisa Buono': {
+                image: 'team-3.png',
+                designation: 'Chief Client Success Officer(CCSO)',
+                details: `    Avani is the visionary force behind Zena, where he leads the company’s business strategy and product innovation. The driving concept behind Zena originated from Avani’s steadfast belief that Artificial Intelligence could transform brand management. He envisioned an AI-powered virtual brand assistant capable of enhancing the abilities of brand teams fivefold, tenfold, or even more. Today, Zena is revolutionizing how brands operate—making teams faster, smarter, and more adaptable in an ever-changing market. From conception to execution, Avani has guided the team’s development of Zena into a cutting-edge solution to provide brands with a true competitive advantage. 
+    Before launching Zena, Avani served as the President and COO of a biotech startup focused on AI-driven drug discovery in neuroscience. This experience deepened his interest in artificial intelligence and its potential to enhance human intelligence, a perspective he now applies to brand management. Avani’s passion for brand building spans decades. He started as a Brand Manager for Centrum, where he honed the art and science of nurturing iconic brands. Later, he co-founded a consumer healthcare company, building multiple brands from the ground up using classic brand management techniques. Having faced the daily challenges encountered by brand managers, Avani now leverages AI to empower brand teams with unmatched speed, efficiency, and strategic capability. 
+    Avani earned a BS in Marketing from Miami University and an MBA from Columbia University.`
+            },
+            'Srinivas Raghavan': {
+                image: 'team-4.png',
+                designation: 'Cheif Technical Officer',
+                details: `    Avani is the visionary force behind Zena, where he leads the company’s business strategy and product innovation. The driving concept behind Zena originated from Avani’s steadfast belief that Artificial Intelligence could transform brand management. He envisioned an AI-powered virtual brand assistant capable of enhancing the abilities of brand teams fivefold, tenfold, or even more. Today, Zena is revolutionizing how brands operate—making teams faster, smarter, and more adaptable in an ever-changing market. From conception to execution, Avani has guided the team’s development of Zena into a cutting-edge solution to provide brands with a true competitive advantage. 
+    Before launching Zena, Avani served as the President and COO of a biotech startup focused on AI-driven drug discovery in neuroscience. This experience deepened his interest in artificial intelligence and its potential to enhance human intelligence, a perspective he now applies to brand management. Avani’s passion for brand building spans decades. He started as a Brand Manager for Centrum, where he honed the art and science of nurturing iconic brands. Later, he co-founded a consumer healthcare company, building multiple brands from the ground up using classic brand management techniques. Having faced the daily challenges encountered by brand managers, Avani now leverages AI to empower brand teams with unmatched speed, efficiency, and strategic capability. 
+    Avani earned a BS in Marketing from Miami University and an MBA from Columbia University.`
+            }
+        }
+
+        function showPopup(memberName) {
+            const popup = document.getElementById('popup');
+            const name = popup.getElementsByTagName('span')[1];
+            const designation = popup.getElementsByClassName('member-designation')[0];
+            designation.innerText = members[memberName].designation;
+            name.innerText = memberName;
+            const image = popup.getElementsByTagName('img')[0];
+            image.src = `./assets/${members[memberName].image}`;
+            const details = popup.getElementsByClassName('member-details')[0];
+            details.innerText = members[memberName].details;
+            popup.style.display = 'flex';
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
     </script>
 
 </body>
