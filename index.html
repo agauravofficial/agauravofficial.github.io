@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zena</title>
     <style>
@@ -25,7 +25,7 @@
             top: 0;
             z-index: 1000;
             transition: background-color 0.3s ease-in-out;
-            border-bottom: 1px solid #404040;
+            border-bottom: 1px solid #ddd;
         }
 
         .navbar .image-container {
@@ -222,10 +222,12 @@
         #home {
             background: url('./assets/zena-hand.png');
             background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         #home .home-top {
-            margin-top: 40px;
+            margin-top: 100px;
             font-family: Kanit;
             font-weight: 400;
             font-size: 70px;
@@ -512,7 +514,7 @@
         .button {
             color: #404040;
             font-weight: 400;
-            font-size: 24px;
+            font-size: 2wpx;
             line-height: 24px;
             letter-spacing: -0.58px;
             text-align: center;
@@ -1029,7 +1031,7 @@
                 if (entry.isIntersecting) {
                     navLinks.forEach(link => {
                         link.classList.remove('active');
-                        if (link.getAttribute('href').substring(1) === entry.target.id) {
+                        if (link.getAttribute('href').substring(1).startsWith(entry.target.id)) {
                             link.classList.add('active');
                         }
                     });
