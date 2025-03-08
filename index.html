@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zena</title>
@@ -75,7 +76,7 @@
         }
 
         .navbar .button,
-        #platform-advantage-5 .button {
+        #advantage-4 .button {
             background-color: #5FDAF3;
             border: none;
             padding: 10px 20px;
@@ -180,14 +181,13 @@
         }
 
 
-        #leadForm input,
-        #leadForm button {
+        #leadForm input {
             width: 100%;
-            padding: 10px;
             margin: 10px 0;
             border-radius: 5px;
             border: 1px solid #ccc;
             background-color: #D9D9D9;
+            height: 30px;
         }
 
         #leadForm button {
@@ -358,7 +358,7 @@
         #about .about-para {
             font-family: Kanit;
             font-weight: 300;
-            font-size: 22px;
+            font-size: 24px;
             line-height: 24px;
             letter-spacing: 0.42px;
             vertical-align: middle;
@@ -422,11 +422,11 @@
             width: 50%;
         }
 
-        #platform-advantage,
-        #platform-advantage-2,
-        #platform-advantage-3,
-        #platform-advantage-4,
-        #platform-advantage-5,
+        #platform,
+        #advantage,
+        #advantage-2,
+        #advantage-3,
+        #advantage-4,
         #team {
             display: flex;
             align-items: center;
@@ -453,8 +453,13 @@
 
         }
 
+        #advantage-3 .advantage-title {
+            margin-top: 40px;
+        }
+
         .advantage-subtitle {
-            margin-top: 20px;
+            margin-bottom: 25px;
+            margin-top: 40px;
             flex: 1;
             font-family: 'Kanit', sans-serif;
             font-weight: 400;
@@ -499,15 +504,15 @@
             text-align: left;
         }
 
-        #platform-advantage-4 .advantage-title,
-        #platform-advantage-4 img,
-        #platform-advantage-5 .advantage-title,
-        #platform-advantage-5 img {
+        #advantage-3 .advantage-title,
+        #advantage-3 img,
+        #advantage-4 .advantage-title,
+        #advantage-4 img {
             margin-top: 60px;
         }
 
-        #platform-advantage-4 .advantage-subtitle,
-        #platform-advantage-5 .button {
+        #advantage-3 .advantage-subtitle,
+        #advantage-4 .button {
             margin-top: 40px;
         }
 
@@ -587,7 +592,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: #D9D9D9;
+            background-color: #999898;
             padding: 25px;
             border-radius: 20px;
             flex: 1;
@@ -667,6 +672,20 @@
                 display: block;
             }
         }
+
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .checkbox-container #insights{
+            margin-right: 8px; /* Adjust the spacing between the checkbox and the label */
+            width: 20px;
+        }
+
+        .checkbox-container label {
+            margin: 0; /* Ensure label is aligned to the left with no margin */
+        }
     </style>
 </head>
 
@@ -683,8 +702,9 @@
         <div class="close-btn">&times;</div>
         <ul>
             <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#platform-advantage">Platform Advantage</a></li>
+            <li><a href="#about">MIssion</a></li>
+            <li><a href="#platform">Platform</a></li>
+            <li><a href="#advantage">Advantage</a></li>
             <li><a href="#team">Team</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -763,7 +783,7 @@
 
     </section>
 
-    <section id="platform-advantage">
+    <section id="platform">
         <div class="advantage-section">
             <div class="advantage-title">
                 The Zena Advantage
@@ -786,7 +806,7 @@
             </div>
         </div>
     </section>
-    <section id="platform-advantage-2">
+    <section id="advantage">
         <div class="advantage-section">
             <div class="advantage-title">
                 Zena interacts with you
@@ -803,7 +823,7 @@
             <img src="./assets/brand-interact.png" />
         </div>
     </section>
-    <section id="platform-advantage-3">
+    <section id="advantage-2">
         <div class="advantage-section">
             <div class="advantage-title">
                 Zena Saves you Time!
@@ -823,7 +843,7 @@
             </div>
         </div>
     </section>
-    <section id="platform-advantage-4">
+    <section id="advantage-3">
         <div class="advantage-section">
             <div class="advantage-title">
                 Zena customized your to brand
@@ -837,7 +857,7 @@
         </div>
         <div class="advantage-title">Empowering brand managers to achieve more</div>
     </section>
-    <section id="platform-advantage-5">
+    <section id="advantage-4">
         <div class="advantage-section">
             <div class="advantage-title">
                 Zena customized your to brand
@@ -949,14 +969,15 @@
                         <input type="text" id="teamsize" name="teamsize" min="0" max="50">
                     </div>
                 </div>
-                <div style="display: flex;
-                    align-items: center;
-                    justify-content: left;">
-                    <input type="checkbox" id="insights" name="insights" style="flex: 1;">
-                    <label for="insights" style="flex: 1;">Signup for Insights:</label>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="insights" name="insights">
+                    <label for="insights">Sign up for Insights, Tips, Updates, and Events.</label>
                 </div>
-                <div class="form-row">
-                    <button type="submit">Schedule a demo</button>
+                <div style="display: flex;
+                    align-items: center;">
+                    <button style="flex: 1;margin-left: 20%;
+                    margin-right: 20%;
+                " type="submit">Schedule a demo</button>
                 </div>
             </form>
 
@@ -1031,7 +1052,7 @@
                 if (entry.isIntersecting) {
                     navLinks.forEach(link => {
                         link.classList.remove('active');
-                        if (link.getAttribute('href').substring(1).startsWith(entry.target.id)) {
+                        if (entry.target.id.startsWith(link.getAttribute('href').substring(1))) {
                             link.classList.add('active');
                         }
                     });
