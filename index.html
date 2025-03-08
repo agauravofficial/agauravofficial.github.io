@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zena</title>
     <style>
@@ -70,9 +71,9 @@
             text-decoration: underline;
         }
 
-        .navbar .button {
+        .navbar .button,
+        #platform-advantage-5 .button {
             background-color: #9CDA6E;
-            color: white;
             border: none;
             padding: 10px 20px;
             cursor: pointer;
@@ -99,7 +100,7 @@
 
         .close-btn {
             display: none;
-            color: white;
+            color: black;
             font-size: 30px;
             position: absolute;
             top: 20px;
@@ -132,7 +133,7 @@
             z-index: -1;
             /* Ensure the pseudo-element is behind the content */
         }
-        
+
         section:last-of-type {
             background: #1E1E1E;
         }
@@ -173,6 +174,7 @@
             font-size: 30px;
             color: #333;
             cursor: pointer;
+            display: block;
         }
 
         #leadForm input,
@@ -221,7 +223,7 @@
             background-size: cover;
             height: 330px;
             position: absolute;
-            bottom: 40px;
+            bottom: 43px;
         }
 
         #home .home-top {
@@ -252,7 +254,7 @@
         }
 
         #home .home-detail {
-            background: url('./assets/home-detail.png');
+            background: url('./assets/zena-home.png');
             width: 650px;
             height: 360px;
         }
@@ -366,6 +368,7 @@
             color: #fff;
             align-items: center;
             flex-direction: column;
+            margin-top: 0px;
         }
 
         #contact .zena-contact-detail {
@@ -415,6 +418,115 @@
             width: 50%;
         }
 
+        #platform-advantage,
+        #platform-advantage-2,
+        #platform-advantage-3,
+        #platform-advantage-4,
+        #platform-advantage-5, #team {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .advantage-section {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+        }
+
+        .advantage-title {
+            font-weight: 400;
+            font-size: 50px;
+            line-height: 40px;
+        }
+
+        #platform-advantage .advantage-subtitle {
+            margin-top: 20px;
+            flex: 1;
+            font-family: 'Kanit', sans-serif;
+            font-weight: 400;
+            font-size: 15px;
+            vertical-align: middle;
+            width: 50%;
+        }
+
+        .advantage-brand {
+            margin-top: 60px;
+            flex: 1;
+            display: flex;
+            text-align: center;
+            align-items: center;
+            gap: 100px;
+        }
+
+        .advantage-brand img {
+            flex: 1
+        }
+
+        .advantage-brand-section {
+            flex: 1;
+            font-family: 'Kanit', sans-serif;
+
+        }
+
+        .advantage-brand-para {
+            font-weight: 400;
+            font-size: 55px;
+            line-height: 40px;
+        }
+
+        .advantage-brand-subpara {
+            font-weight: 300;
+            font-size: 15px;
+            line-height: 40px;
+            text-align: justify;
+        }
+
+        #platform-advantage-4 .advantage-title,
+        #platform-advantage-4 img,
+        #platform-advantage-5 .advantage-title,
+        #platform-advantage-5 img {
+            margin-top: 60px;
+        }
+
+        #platform-advantage-4 .advantage-subtitle,
+        #platform-advantage-5 .button {
+            margin-top: 40px;
+        }
+
+        .button {
+            color: #001436;
+            font-family: Roboto;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 58px;
+            letter-spacing: -0.58px;
+            text-align: center;
+            vertical-align: middle;
+            border-radius: 12px;
+        }
+
+        #team .advantage-brand-section{
+            display: flex;
+            gap:50px;
+        }
+
+        .team-bubble {
+            margin-top: 60px;
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 20px;
+            flex: 1;
+            font-family: Kanit;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 25px;
+            letter-spacing: -0.58px;
+            text-align: center;
+            vertical-align: middle;
+
+        }
 
         @media (max-width: 768px) {
             .navbar ul {
@@ -543,64 +655,96 @@
     </section>
 
     <section id="platform-advantage">
-        <div>
-            The Zena Advantage
+        <div class="advantage-section">
+            <div class="advantage-title">
+                The Zena Advantage
+            </div>
+
+            <div class="advantage-subtitle">
+                AI-powered capabilities giving you a competitive edge
+            </div>
         </div>
-        <div>
-            AI-powered capabilities giving you a competitive edge
-        </div>
-        <div>
-            Zena expands your "brand intelligence."
+        <div class="advantage-brand">
+            <img src="./assets/zena-advantage.png" />
+            <div class="advantage-brand-section">
+                <p class="advantage-brand-para">Zena expands your "brand intelligence."</p>
+                <p class="advantage-brand-subpara">Uploads, organizes and stores all of your brand’s data, history and
+                    relevant information.
+                    Examines large swaths of data to help find undiscovered patterns.
+                    Helps you transform vast datasets into actionable insights.
+                    The more you use Zena, the smarter Zena gets (about your brand!)</p>
+            </div>
         </div>
     </section>
     <section id="platform-advantage-2">
-        <div>
-            The Zena Advantage
+        <div class="advantage-section">
+            <div class="advantage-title">
+                Zena interacts with you
+            </div>
         </div>
-        <div>
-            AI-powered capabilities giving you a competitive edge
-        </div>
-        <div>
-            Zena expands your "brand intelligence."
+        <div class="advantage-brand">
+            <div class="advantage-brand-section">
+                <p class="advantage-brand-subpara">Engage and interact with Zena in a back-and-forth dialogue.
+                    Query Zena for market data, brand performance metrics, and marketplace analyses.
+                    It’s like having a “conversation with your data.”</p>
+            </div>
+            <img src="./assets/brand-interact.png" />
         </div>
     </section>
     <section id="platform-advantage-3">
-        <div>
-            The Zena Advantage
+        <div class="advantage-section">
+            <div class="advantage-title">
+                Zena transforms your productivity
+            </div>
         </div>
-        <div>
-            AI-powered capabilities giving you a competitive edge
-        </div>
-        <div>
-            Zena expands your "brand intelligence."
+        <div class="advantage-brand">
+            <img src="./assets/zena-productivity.png" />
+
+            <div class="advantage-brand-section">
+                <p class="advantage-brand-subpara">Let Zena handle mundane labor-intensive tasks
+                    like custom charts and reports - in a fraction of the time.
+                    Zena gets more from your data, and saves time in the process.
+                    Zena multiplies every
+                    brand manager’s capabilities.</p>
+            </div>
         </div>
     </section>
     <section id="platform-advantage-4">
-        <div>
-            The Zena Advantage
+        <div class="advantage-section">
+            <div class="advantage-title">
+                Zena customized your to brand
+            </div>
+            <div class="advantage-subtitle">
+                Zena is built specifically for your use,
+                because it’s engineered from your brand’s data.
+            </div>
+            <img src="./assets/zena-home.png" />
+
         </div>
-        <div>
-            AI-powered capabilities giving you a competitive edge
-        </div>
-        <div>
-            Zena expands your "brand intelligence."
-        </div>
+        <div class="advantage-title">Empowering brand managers to achieve more</div>
     </section>
     <section id="platform-advantage-5">
-        <div>
-            The Zena Advantage
-        </div>
-        <div>
-            AI-powered capabilities giving you a competitive edge
-        </div>
-        <div>
-            Zena expands your "brand intelligence."
+        <div class="advantage-section">
+            <div class="advantage-title">
+                Zena customized your to brand
+            </div>
+            <button class="button">Schedule Demo</button>
+            <img src="./assets/zena-action.png" />
         </div>
     </section>
 
     <section id="team">
-        <h2>Team</h2>
-        <p>Meet the talented individuals behind our success.</p>
+        <div class="advantage-section">
+            <div class="advantage-title">
+                What brand managers are saying.
+            </div>
+            <div class="advantage-brand-section">
+                <div class="team-bubble">"Zena is like having asuper-intelligent brand assistant on call 24/7."</div>
+                <div class="team-bubble">"With Zena, I was able to complete a project in 15 minutes that normally takes
+                    methree hours."</div>
+                <div class="team-bubble">"With Zena plows through data in minutes to find my answers."</div>
+            </div>
+        </div>
     </section>
 
     <section id="contact">
@@ -683,10 +827,13 @@
         });
 
         // Open lead form on button click
-        const leadFormButton = document.querySelector('.navbar .button');
-        leadFormButton.addEventListener('click', function () {
-            leadForm.style.display = 'flex';
-            history.pushState({ leadFormOpen: true }, 'Lead Form Opened');
+        const leadFormButtons = document.querySelectorAll('.button');
+        leadFormButtons.forEach(leadFormButton => {
+            leadFormButton.addEventListener('click', function () {
+                leadForm.style.display = 'flex';
+                history.pushState({ leadFormOpen: true }, 'Lead Form Opened');
+            });
+
         });
 
         // Close lead form when the close button is clicked
