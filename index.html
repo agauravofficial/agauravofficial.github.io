@@ -34,9 +34,8 @@
         }
 
         .navbar img {
-            height: 99px;
             margin: auto;
-            width: 179px;
+            height: 70px;
         }
 
         .navbar ul {
@@ -132,7 +131,7 @@
         }
 
         #leadForm {
-            display: none;
+            display: flex;
             position: fixed;
             top: 0;
             left: 0;
@@ -150,24 +149,36 @@
         #leadForm .form-content {
             background-color: #fff;
             border-radius: 8px;
-            width: 50%;
             max-width: 90%;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             text-align: left;
             padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
         }
 
 
         #leadForm .close-btn,
         #popup .close-btn {
             position: absolute;
-            top: 20px;
-            right: 100px;
-            font-size: 30px;
+            font-size: 45px;
             color: #404040;
             cursor: pointer;
             display: block;
         }
+
+        #leadForm .close-btn {
+            top: 6%;
+            right: 34%;
+        }
+
+        #popup .close-btn {
+            top: 21%;
+            right: 12%;
+        }
+
 
         #leadForm input,
         #leadForm button {
@@ -200,6 +211,11 @@
 
         .form-row input {
             width: 48%;
+            /* Ensures two inputs are side by side with some spacing */
+        }
+
+        .form-row button {
+            width: 50%;
             /* Ensures two inputs are side by side with some spacing */
         }
 
@@ -536,6 +552,8 @@
         #popup .team-bubble {
             text-align: left;
             background-color: transparent;
+            margin-top: 0px;
+            margin-bottom: 0px;
         }
 
         #popup .team-bubble-container {
@@ -580,6 +598,8 @@
             vertical-align: middle;
             flex-direction: column;
             z-index: 1001;
+            align-items: center;
+            justify-content: center;
         }
 
         .popup-content {
@@ -888,8 +908,12 @@
     </div>
     <!-- Lead Form -->
     <div id="leadForm">
+        <span class="close-btn">&times;</span>
+
         <div class="form-content">
-            <span class="close-btn">&times;</span>
+            <div>
+                <img src="./assets/zena-transparent.png" />
+            </div>
             <h2>Schedule a Demo</h2>
             <form id="form" action="#">
                 <label for="email">Email:</label>
@@ -923,12 +947,17 @@
                         <input type="number" id="teamsize" name="teamsize" min="0" max="50">
                     </div>
                 </div>
-                <div class="form-row">
-                    <input type="checkbox" id="insights" name="insights">
-
-                    <label for="insights">Signup for Insights:</label>
+                <div style="display: flex;
+                    align-items: center;
+                    justify-content: left;">
+                    <input type="checkbox" id="insights" name="insights" style="flex: 1;">
+                    <label for="insights" style="flex: 1;">Signup for Insights:</label>
                 </div>
-                <button type="submit">Submit</button>
+                <div class="form-row">
+                    <button type="submit">Schedule a demo</button>
+                </div>
+            </form>
+
             </form>
         </div>
     </div>
