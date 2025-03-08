@@ -28,9 +28,15 @@
             border-bottom: 1px solid #404040;
         }
 
+        .navbar .image-container {
+            flex: 1;
+            display: flex;
+        }
+
         .navbar img {
             height: 99px;
-            margin-left: 40px;
+            margin: auto;
+            width: 179px;
         }
 
         .navbar ul {
@@ -38,6 +44,7 @@
             display: flex;
             margin: 0;
             padding: 0;
+            flex: 2;
         }
 
         .navbar ul li {
@@ -107,7 +114,7 @@
         }
 
         section:not(:first-of-type) {
-            margin-top: 128px;
+            margin-top: 32px;
             padding: 60px 20px;
             border-bottom: 1px solid #ddd;
             opacity: 0;
@@ -296,7 +303,8 @@
         #about .about-section {
             flex: 1;
             text-align: center;
-            margin: 40px;
+            margin-top: 20px;
+            margin-bottom: 20px;
         }
 
         #about .about-title {
@@ -326,6 +334,7 @@
             align-items: center;
             align-self: center;
             width: 65%;
+            margin-top: 100px;
         }
 
         #about .about-para {
@@ -463,10 +472,13 @@
         }
 
         .advantage-brand-subpara {
+            font-family: Kanit;
             font-weight: 300;
-            font-size: 15px;
+            font-size: 22px;
             line-height: 24px;
-            text-align: justify;
+            letter-spacing: 0.42px;
+            vertical-align: middle;
+            text-align: left;
         }
 
         #platform-advantage-4 .advantage-title,
@@ -494,7 +506,7 @@
         }
 
         #team .advantage-title {
-            margin-top: 100px;
+            margin-top: 64px;
         }
 
         #team .advantage-brand-section {
@@ -643,7 +655,9 @@
             <span></span>
             <span></span>
         </div>
-        <img src='./assets/zena_logo.png' />
+        <div class="image-container">
+            <img src='./assets/zena-logo.jpg' />
+        </div>
         <div class="close-btn">&times;</div>
         <ul>
             <li><a href="#home">Home</a></li>
@@ -652,7 +666,10 @@
             <li><a href="#team">Team</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-        <button class="button">Schedule Demo</button>
+        <div class="image-container">
+            <button class="button">Schedule Demo</button>
+        </div>
+
     </nav>
 
     <section id="home">
@@ -695,27 +712,33 @@
     </section>
 
     <section id="about">
-        <div class="about-section about-title">The Zena Mission</div>
-        <div class="about-section about-subtitle">Empowering Brand Managers</div>
-        <div class="about-section about-zena-mission">
-            <div class="about-para">
-                Today’s brand managers face challenge: they are often stymied by too much data, too few insights, too
-                many tasks...and not enough resources to bring it all together.
-                <br />
-                <br />
-                Leveraging decades of our brand management expertise, we set out to solve this dilemma. Harnessing the
-                emerging power of artificial intelligence, we partnered with AI/ ML software experts to create a
-                “virtual
-                assistant” platform that was custom designed for the needs of CPG brand managers. The result was Zena, a
-                transformative resource that expands every brand manager’s strategic, analytical and executional
-                capabilities.
-                <br />
-                <br />
-                As we like to say: “Zena was designed by brand managers, for brand managers.”
-            </div>
-            <img src="./assets/about-zena.png" />
+        <div class="advantage-section">
+            <div class="advantage-title">The Zena Mission</div>
+            <div class="advantage-subtitle">Empowering Brand Managers</div>
+            <div class="about-section about-zena-mission">
+                <div class="about-para">
+                    Today’s brand managers face challenge: they are often stymied by too much data, too few insights,
+                    too
+                    many tasks...and not enough resources to bring it all together.
+                    <br />
+                    <br />
+                    Leveraging decades of our brand management expertise, we set out to solve this dilemma. Harnessing
+                    the
+                    emerging power of artificial intelligence, we partnered with AI/ ML software experts to create a
+                    “virtual
+                    assistant” platform that was custom designed for the needs of CPG brand managers. The result was
+                    Zena, a
+                    transformative resource that expands every brand manager’s strategic, analytical and executional
+                    capabilities.
+                    <br />
+                    <br />
+                    As we like to say: “Zena was designed by brand managers, for brand managers.”
+                </div>
+                <img src="./assets/about-zena.png" />
 
+            </div>
         </div>
+
     </section>
 
     <section id="platform-advantage">
@@ -770,9 +793,9 @@
             <div class="advantage-brand-section">
                 <p class="advantage-brand-subpara">
                     Performs labor-intensive tasks in a fraction of the usual time.
-                    <br />
+                    <br /><br />
                     Zena unlocks the full potential of your data while saving time in the process.
-                    <br />
+                    <br /><br />
                     Zena multiplies every brand manager’s capabilities.
                 </p>
             </div>
@@ -831,14 +854,13 @@
             <div class="zena-contact-get-in-touch">
                 Get In Touch
                 <div class="zena-contact-para">
-                    Brand Compass, LLC 10 West Road #1050Newton, PA 18940, United States
-                    <br />
-                     Brand Compass, LLC 10 West Road #1050, Newton, PA 18940, United States
+                    Brand Compass, LLC 10 West Road #1050, Newton, PA 18940, United States
+                    <br /><br />
+                    Brand Compass, LLC 10 West Road #1050, Newton, PA 18940, United States
                     test@test.ai
                 </div>
             </div>
         </div>
-        <div class="contact-footer">Copyright © 2025 brandcompass.ai | Powered by brandcompass.ai</div>
     </section>
 
     <div id="popup">
