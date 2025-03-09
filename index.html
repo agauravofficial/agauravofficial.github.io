@@ -25,7 +25,6 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            transition: background-color 0.3s ease-in-out;
             border-bottom: 1px solid #ddd;
         }
 
@@ -114,9 +113,9 @@
         section:not(:first-of-type) {
             margin-top: 32px;
             padding: 60px 20px;
-            border-bottom: 1px solid #ddd;
             opacity: 0;
-            transition: opacity 1s ease-in-out;
+            transform: translateY(20px);
+            transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
             position: relative;
             z-index: 1;
         }
@@ -126,6 +125,7 @@
         }
 
         section.visible {
+            transform: translateY(0);
             opacity: 1;
         }
 
@@ -625,6 +625,20 @@
         }
 
         @media (max-width: 768px) {
+            #popup {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                justify-content: center;
+                align-items: center;
+                color: #404040;
+                text-align: center;
+                border-radius: 0px;
+                padding: 0px;
+            }
+
             .navbar ul {
                 flex-direction: column;
                 display: none;
@@ -662,10 +676,10 @@
 
             .navbar .button {
                 display: block;
-                top: 90vh;
+                bottom: 0%;
                 position: fixed;
                 left: 50vw;
-                transform: translateX(-50%);
+                transform: translateX(-50%) translateY(-100%);
             }
 
             .close-btn.show {
@@ -759,25 +773,9 @@
                 flex-direction: column;
             }
 
-            .checkbox-container {
-                display: flex;
-                align-items: center;
-            }
-
-            .checkbox-container #insights {
-                margin-right: 8px;
-                /* Adjust the spacing between the checkbox and the label */
-                width: 20px;
-            }
-
-            .checkbox-container label {
-                margin: 0;
-                /* Ensure label is aligned to the left with no margin */
-            }
-
             #leadForm .close-btn {
-                top: 1%;
-                right: 15%;
+                top: 4%;
+                right: 10%;
             }
 
             #leadForm .form-content {
@@ -808,8 +806,8 @@
             }
 
             #popup .close-btn {
-                top: 14%;
-                right: 18%;
+                top: 13%;
+                right: 15%;
             }
 
             .member-details {
@@ -821,6 +819,27 @@
                 width: 125px;
                 height: 200px;
             }
+
+            #contact .zena-contact-get-in-touch {
+                width: 80%;
+            }
+        }
+
+        #leadform .checkbox-container {
+            display: flex;
+            align-items: center;
+        }
+
+        #leadform .checkbox-container #insights {
+            margin-right: 8px;
+            /* Adjust the spacing between the checkbox and the label */
+            width: 20px;
+        }
+
+        #leadform .checkbox-container label {
+            margin: 0;
+            /* Ensure label is aligned to the left with no margin */
+        }
     </style>
 </head>
 
@@ -1023,10 +1042,9 @@
             <div class="zena-contact-get-in-touch">
                 Get In Touch
                 <div class="zena-contact-para">
-                    Brand Compass, LLC 10 West Road #1050, Newton, PA 18940, United States
+                    Brand Compass, LLC 10 West Road #1050 Newton, PA 18940,United States
                     <br /><br />
-                    Brand Compass, LLC 10 West Road #1050, Newton, PA 18940, United States
-                    test@test.ai
+                    ak@brandcompass.ai
                 </div>
             </div>
         </div>
@@ -1120,6 +1138,18 @@
         const closeButton = document.querySelector('.close-btn');
         const leadFormCloseButton = leadForm.querySelector('.close-btn');
 
+        const loadTeamSectionForMobile = () => {
+            document.querySelector('#team .advantage-brand-section').style.flexDirection = 'row';
+            if (window.innerWidth <= 768) {
+                setTimeout(() => {
+                    document.querySelector('#team .advantage-brand-section').style.flexDirection = 'column';
+                });
+            }
+        }
+
+        loadTeamSectionForMobile();
+        window.addEventListener('resize', loadTeamSectionForMobile);
+
         // Toggle menu open/close on hamburger click
         hamburger.addEventListener('click', function () {
             navbar.classList.toggle('show');
@@ -1171,6 +1201,7 @@
                 // Close the menu when a navigation link is clicked on mobile
                 if (window.innerWidth <= 768) {
                     navbar.classList.remove('show');
+                    document.querySelector('#team .advantage-brand-section').style.flexDirection = 'column'
                 }
             });
         });
@@ -1278,6 +1309,24 @@ Srinivas received his MS and Ph.D. from The Ohio State University in Computer Sc
         function closePopup() {
             document.getElementById('popup').style.display = 'none';
         }
+
+        function toggleButtonPosition() {
+            const lastSection = document.querySelector('section:last-of-type');
+            const button = document.querySelector('.navbar .button');
+            const lastSectionRect = lastSection.getBoundingClientRect();
+
+            if (window.innerWidth <= 768 & lastSectionRect.top <= window.innerHeight && lastSectionRect.bottom >= 0) {
+                button.style.bottom = '-2%'; // Show button when the last section is in view
+            } else {
+                button.style.bottom = '0%'; // Hide button otherwise
+            }
+        }
+
+        // Add event listener for window scroll
+        window.addEventListener('scroll', toggleButtonPosition);
+
+        // Initial check
+        toggleButtonPosition();
     </script>
 
 </body>
