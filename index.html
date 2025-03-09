@@ -75,8 +75,7 @@
             text-decoration: underline;
         }
 
-        .navbar .button,
-        #advantage-4 .button {
+        .navbar .button {
             background-color: #5FDAF3;
             border: none;
             padding: 10px 20px;
@@ -84,8 +83,7 @@
             border-radius: 5px;
         }
 
-        .navbar .button:hover,
-        #platform-advantage-4 .button:hover {
+        .navbar .button:hover {
             background-color: #6cbdce;
         }
 
@@ -426,7 +424,6 @@
         #advantage,
         #advantage-2,
         #advantage-3,
-        #advantage-4,
         #team {
             display: flex;
             align-items: center;
@@ -505,14 +502,11 @@
         }
 
         #advantage-3 .advantage-title,
-        #advantage-3 img,
-        #advantage-4 .advantage-title,
-        #advantage-4 img {
+        #advantage-3 img {
             margin-top: 60px;
         }
 
-        #advantage-3 .advantage-subtitle,
-        #advantage-4 .button {
+        #advantage-3 .advantage-subtitle {
             margin-top: 40px;
         }
 
@@ -554,6 +548,7 @@
             display: flex;
             flex-direction: column;
             cursor: pointer;
+            align-items: center;
         }
 
         #popup .team-bubble {
@@ -625,6 +620,10 @@
 
         }
 
+        .hidden {
+            display: none;
+        }
+
         @media (max-width: 768px) {
             .navbar ul {
                 flex-direction: column;
@@ -644,7 +643,7 @@
             }
 
             .navbar ul:first-of-type {
-                margin-top: 128px;
+                margin-top: 32px;
             }
 
             .navbar ul li {
@@ -663,30 +662,165 @@
 
             .navbar .button {
                 display: block;
-                margin-left: auto;
-                background-color: #9CDA6E;
+                top: 90vh;
+                position: fixed;
+                left: 50vw;
+                transform: translateX(-50%);
             }
 
-            .close-btn {
+            .close-btn.show {
+                display: block;
+                margin-top: 20%;
+                color: #404040;
+                z-index: 1;
+            }
+
+            #home {
+                background: #000;
+            }
+
+            #home .home-detail {
+                margin-top: 56px;
+            }
+
+            .advantage-title,
+            #home .home-detail-bottom,
+            #home .home-title {
+                line-height: 48px;
+                font-size: 40px;
+                width: 90%;
+
+            }
+
+            #about .about-zena-mission {
+                flex-direction: column-reverse;
+            }
+
+            .advantage-brand:nth-child(even) {
+                width: auto;
+                flex-direction: column;
+            }
+
+            .advantage-brand:nth-child(odd) {
+                width: auto;
+                flex-direction: column-reverse;
+            }
+
+            #about .about-section img,
+            .advantage-brand img {
+                width: 380px;
+            }
+
+            #about .about-para,
+            .advantage-brand-subpara {
+                text-align: center;
+                width: 360px;
+            }
+
+            #advantage .advantage-brand {
+                width: auto;
+                flex-direction: column-reverse;
+            }
+
+            #advantage-3 .advantage-title {
+                width: 360px;
+            }
+
+            #advantage-3 img {
+                margin-top: 16px;
+                width: 380px;
+            }
+
+            #team .advantage-title {
+                margin-top: 48px;
+            }
+
+            #team .advantage-brand-section {
+                flex-direction: column;
+            }
+
+
+
+            #team .team-bubble {
+                margin-top: 50px;
+                margin-bottom: 50px;
+
+            }
+
+            .hamburger {
+                flex: 1;
+            }
+
+            .form-content {
+                max-width: 60%;
+            }
+
+            .form-row {
+                flex-direction: column;
+            }
+
+            .checkbox-container {
+                display: flex;
+                align-items: center;
+            }
+
+            .checkbox-container #insights {
+                margin-right: 8px;
+                /* Adjust the spacing between the checkbox and the label */
+                width: 20px;
+            }
+
+            .checkbox-container label {
+                margin: 0;
+                /* Ensure label is aligned to the left with no margin */
+            }
+
+            #leadForm .close-btn {
+                top: 1%;
+                right: 15%;
+            }
+
+            #leadForm .form-content {
+                max-width: 65%;
+            }
+
+            #leadForm .form-content img {
+                height: 96px;
+            }
+
+            #contact .zena-contact-detail {
+                flex-direction: column;
+                width: 100%;
+                text-align: left;
+            }
+
+            .hidden {
                 display: block;
             }
-        }
 
-        .checkbox-container {
-            display: flex;
-            align-items: center;
-        }
+            .hidden img {
+                width: 100%;
+            }
 
-        .checkbox-container #insights {
-            margin-right: 8px;
-            /* Adjust the spacing between the checkbox and the label */
-            width: 20px;
-        }
+            #popup .team-bubble-container {
+                flex-direction: column;
+                align-items: center;
+            }
 
-        .checkbox-container label {
-            margin: 0;
-            /* Ensure label is aligned to the left with no margin */
-        }
+            #popup .close-btn {
+                top: 14%;
+                right: 18%;
+            }
+
+            .member-details {
+                max-height: 300px;
+                overflow: scroll;
+            }
+
+            .team-bubble img {
+                width: 125px;
+                height: 200px;
+            }
     </style>
 </head>
 
@@ -751,6 +885,7 @@
             </div>
             <div class="home-detail-bottom">Empowering Brand Managers
                 to Achieve More</div>
+            <div class="hidden"><img src="./assets/zena-hand.png" /></div>
         </div>
     </section>
 
@@ -847,7 +982,7 @@
     <section id="advantage-3">
         <div class="advantage-section">
             <div class="advantage-title">
-                Zena customized your to brand
+                Zena customized to your brand
             </div>
             <div class="advantage-subtitle">
                 Zena is built specifically for your use,
@@ -857,15 +992,6 @@
 
         </div>
         <div class="advantage-title">Empowering brand managers to achieve more</div>
-    </section>
-    <section id="advantage-4">
-        <div class="advantage-section">
-            <div class="advantage-title">
-                Zena customized your to brand
-            </div>
-            <button class="button">Schedule Demo</button>
-            <img src="./assets/zena-action.png" />
-        </div>
     </section>
 
     <section id="team">
@@ -939,34 +1065,34 @@
             </div>
             <h2>Schedule a Demo</h2>
             <form id="form" action="#">
-                <label for="email">Email:</label>
+                <label for="email">Email*</label>
                 <input type="email" id="email" name="email" required maxlength="100">
 
-                <label for="phone">Phone:</label>
+                <label for="phone">Phone*</label>
                 <input type="tel" id="phone" name="phone"
                     pattern="^\+?[0-9]{1,4}?[-. ]?([0-9]{1,4})[-. ]?([0-9]{1,4})[-. ]?([0-9]{1,9})$" required>
 
                 <div class="form-row">
                     <div>
-                        <label for="firstname">First Name:</label>
+                        <label for="firstname">First Name*</label>
                         <input type="text" id="firstname" name="firstname" required minlength="2" maxlength="100">
                     </div>
                     <div>
-                        <label for="lastname">Last Name:</label>
+                        <label for="lastname">Last Name*</label>
                         <input type="text" id="lastname" name="lastname" required minlength="2" maxlength="100">
                     </div>
                 </div>
 
-                <label for="company">Company:</label>
+                <label for="company">Company*</label>
                 <input type="text" id="company" name="company" required minlength="5" maxlength="100">
 
                 <div class="form-row">
                     <div>
-                        <label for="department">Department:</label>
+                        <label for="department">Department</label>
                         <input type="text" id="department" name="department">
                     </div>
                     <div>
-                        <label for="teamsize">Team Size:</label>
+                        <label for="teamsize">Team Size</label>
                         <input type="text" id="teamsize" name="teamsize" min="0" max="50">
                     </div>
                 </div>
@@ -982,6 +1108,7 @@
                 </div>
             </form>
 
+
             </form>
         </div>
     </div>
@@ -996,11 +1123,13 @@
         // Toggle menu open/close on hamburger click
         hamburger.addEventListener('click', function () {
             navbar.classList.toggle('show');
+            closeButton.classList.toggle('show');
         });
 
         // Close the menu on close button click
         closeButton.addEventListener('click', function () {
             navbar.classList.remove('show');
+            closeButton.classList.toggle('show');
         });
 
         // Open lead form on button click
