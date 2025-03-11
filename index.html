@@ -200,6 +200,22 @@
             background-color: #6cbdce;
         }
 
+        #leadForm .checkbox-container {
+            display: flex;
+            align-items: center;
+        }
+
+        #leadForm .checkbox-container #insights {
+            margin-right: 8px;
+            /* Adjust the spacing between the checkbox and the label */
+            width: 20px;
+        }
+
+        #leadForm .checkbox-container label {
+            margin: 0;
+            /* Ensure label is aligned to the left with no margin */
+        }
+
         /* Flexbox styling for fields in the same row */
         .form-row {
             display: flex;
@@ -263,6 +279,7 @@
             flex-direction: column;
             align-self: self-start;
             margin-left: 20%;
+
         }
 
         #home .home-detail-bottom {
@@ -695,6 +712,9 @@
 
             #home .home-detail {
                 margin-top: 56px;
+                width: 75%;
+                align-self: unset;
+                margin-left: unset;
             }
 
             .advantage-title,
@@ -823,22 +843,6 @@
             #contact .zena-contact-get-in-touch {
                 width: 80%;
             }
-        }
-
-        #leadform .checkbox-container {
-            display: flex;
-            align-items: center;
-        }
-
-        #leadform .checkbox-container #insights {
-            margin-right: 8px;
-            /* Adjust the spacing between the checkbox and the label */
-            width: 20px;
-        }
-
-        #leadform .checkbox-container label {
-            margin: 0;
-            /* Ensure label is aligned to the left with no margin */
         }
     </style>
 </head>
