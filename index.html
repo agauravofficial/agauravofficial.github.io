@@ -194,6 +194,19 @@
             padding: 10px 20px;
             cursor: pointer;
             border-radius: 5px;
+            color: #404040;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 24px;
+            letter-spacing: -0.58px;
+            text-align: center;
+            vertical-align: middle;
+            border-radius: 12px;
+            font-family: Kanit;
+            flex: 1;
+            margin-left: 20%;
+            margin-right: 20%;
+
         }
 
         #leadForm .button:hover {
@@ -810,6 +823,11 @@
                 flex-direction: column;
             }
 
+            #leadForm button{
+                margin-left: auto;
+                margin-right: auto;
+            }
+
             #leadForm .close-btn {
                 top: 4%;
                 right: 10%;
@@ -1047,34 +1065,34 @@
                 <div class="team-bubble" onclick="showPopup('Avani Kanubaddi')"><img src='./assets/team-1.png' />Avani
                     Kanubaddi<p class="member-designation">CEO and Founder</p>
                     <div class="team-social">
-                        <img src="./assets/linkedin.png">
-                        <img src="./assets/twitter.png">
-                        <img src="./assets/youtube.png">
+                        <img src="./assets/linkedin.png" onclick="navigateToSocial('Avani Kanubaddi', 'linkedin')">
+                        <!-- <img src="./assets/twitter.png"> -->
+                        <!-- <img src="./assets/youtube.png"> -->
                     </div>
                 </div>
                 <div class="team-bubble" onclick="showPopup('Doug Rogers')"><img src='./assets/team-2.png' />Doug Rogers
                     <p class="member-designation">President and Co-founder</p>
                     <div class="team-social">
-                        <img src="./assets/linkedin.png">
-                        <img src="./assets/twitter.png">
-                        <img src="./assets/youtube.png">
+                        <img src="./assets/linkedin.png" onclick="navigateToSocial('Doug Rogers', 'linkedin')">
+                        <!-- <img src="./assets/twitter.png"> -->
+                        <!-- <img src="./assets/youtube.png"> -->
                     </div>
                 </div>
                 <div class="team-bubble" onclick="showPopup('Lisa Buono')"><img src='./assets/team-3.png' />Lisa Buono<p
                         class="member-designation">Chief Client Success Officer(CCSO)</p>
                     <div class="team-social">
-                        <img src="./assets/linkedin.png">
-                        <img src="./assets/twitter.png">
-                        <img src="./assets/youtube.png">
+                        <img src="./assets/linkedin.png" onclick="navigateToSocial('Lisa Buono', 'linkedin')">
+                        <!-- <img src="./assets/twitter.png"> -->
+                        <!-- <img src="./assets/youtube.png"> -->
                     </div>
                 </div>
                 <div class="team-bubble" onclick="showPopup('Srinivas Raghavan')"><img
                         src='./assets/team-4.png' />Srinivas Raghavan<p class="member-designation">Chief Technical
                         Officer</p>
                     <div class="team-social">
-                        <img src="./assets/linkedin.png">
-                        <img src="./assets/twitter.png">
-                        <img src="./assets/youtube.png">
+                        <img src="./assets/linkedin.png" onclick="navigateToSocial('Srinivas Raghavan', 'linkedin')">
+                        <!-- <img src="./assets/twitter.png"> -->
+                        <!-- <img src="./assets/youtube.png"> -->
                     </div>
                 </div>
             </div>
@@ -1087,9 +1105,9 @@
             <div class="zena-contact-get-in-touch">
                 Get In Touch
                 <div class="zena-contact-para">
-                    Brand Compass, LLC 10 West Road #1050 Newton, PA 18940,United States
+                    Brantuit AI , LLC 10 West Road #1050 Newton, PA 18940,United States
                     <br /><br />
-                    ak@brandcompass.ai
+                    contact@brantuit.ai
                 </div>
             </div>
         </div>
@@ -1106,9 +1124,9 @@
                             <img src='' /><span id="name"></span>
                             <p class="member-designation"></p>
                             <div class="team-social">
-                                <img src="./assets/linkedin.png">
-                                <img src="./assets/twitter.png">
-                                <img src="./assets/youtube.png">
+                                <img src="./assets/linkedin.png" onclick="navigateToSocial(undefined, undefined, this)">
+                                <!-- <img src="./assets/twitter.png"> -->
+                                <!-- <img src="./assets/youtube.png"> -->
                             </div>
                         </div>
                         <div class="member-details">
@@ -1170,9 +1188,7 @@
                 </div>
                 <div style="display: flex;
                     align-items: center;">
-                    <button style="flex: 1;margin-left: 20%;
-                    margin-right: 20%;
-                " type="submit">Schedule a demo</button>
+                    <button class="submit-button" type="submit">Schedule a Demo</button>
                 </div>
             </form>
 
@@ -1318,21 +1334,30 @@
                 designation: 'CEO and Founder',
                 details: `Avani is the visionary force behind Zena, where he leads the company’s business strategy and product innovation. The driving concept behind Zena originated from Avani’s steadfast belief that Artificial Intelligence could transform brand management. He envisioned an AI-powered virtual brand assistant capable of enhancing the abilities of brand teams fivefold, tenfold, or even more. Today, Zena is revolutionizing how brands operate—making teams faster, smarter, and more adaptable in an ever-changing market. From conception to execution, Avani has guided the team’s development of Zena into a cutting-edge solution to provide brands with a true competitive advantage. 
     Before launching Zena, Avani served as the President and COO of a biotech startup focused on AI-driven drug discovery in neuroscience. This experience deepened his interest in artificial intelligence and its potential to enhance human intelligence, a perspective he now applies to brand management. Avani’s passion for brand building spans decades. He started as a Brand Manager for Centrum, where he honed the art and science of nurturing iconic brands. Later, he co-founded a consumer healthcare company, building multiple brands from the ground up using classic brand management techniques. Having faced the daily challenges encountered by brand managers, Avani now leverages AI to empower brand teams with unmatched speed, efficiency, and strategic capability. 
-    Avani earned a BS in Marketing from Miami University and an MBA from Columbia University.`
+    Avani earned a BS in Marketing from Miami University and an MBA from Columbia University.`,
+                links: {
+                    linkedin: 'https://www.linkedin.com/in/avani-k-21603225/'
+                }
             },
             'Doug Rogers': {
                 image: 'team-2.png',
                 designation: 'President and Co-Founder',
                 details: ` As President, Doug is responsible for Zena’s business development and shares responsibility with Avani for business strategy. He brings 40 years of consumer brand management and executive leadership experience to the Zena team, and helped guide the development of Zena’s “brand management intelligence.”​
 Previously, as Global President for Wyeth Consumer Healthcare, Doug was responsible for a $3 billion brand portfolio which included some of the most well-known consumer healthcare brands in the world, including Advil, Centrum, Chapstick, Robitussin, Preparation H and Caltrate. Leading up to that role, Doug served in a variety of sales and marketing leadership positions throughout his career, including SVP of Marketing for American Home Foods, makers of Chef Boyardee, Polaner’s All Fruit and Gulden’s mustard.​
-Doug has spent the last 10+ years advising and consulting for a variety of consumer goods companies. He holds both a BA and MBA from Lehigh University.`
+Doug has spent the last 10+ years advising and consulting for a variety of consumer goods companies. He holds both a BA and MBA from Lehigh University.`,
+                links: {
+                    linkedin: 'https://www.linkedin.com/in/douglas-rogers-80126a17/'
+                }
             },
             'Lisa Buono': {
                 image: 'team-3.png',
                 designation: 'Chief Client Success Officer(CCSO)',
                 details: `Lisa is a career marketing professional with over 40 years of brand management, brand consulting and market data/research experience. Most recently, she was Insights Principal within IRI’s Healthcare practice where she was responsible for data management and analyses for 10 consumer healthcare clients. ​
 Lisa’s brand experience is wide ranging, especially within the consumer healthcare sector where she’s personally managed brand portfolios for Wyeth Consumer Healthcare (Centrum, Caltrate, Robitussin, Dimetapp, Advil, Primatene, Chapstick, Denorex), and consulted for Blacksmith/Prestige (Luden’s, Pediacare, Nasalcrom). Her combined extensive brand management and data analytics expertise was invaluable in helping to train Zena.​
-Lisa has a BS in Chemistry and Math from Montclair State University, and an MBA from Rutgers.`
+Lisa has a BS in Chemistry and Math from Montclair State University, and an MBA from Rutgers.`,
+                links: {
+                    linkedin: 'https://www.linkedin.com/in/lisacbuono/'
+                }
             },
             'Srinivas Raghavan': {
                 image: 'team-4.png',
@@ -1342,8 +1367,21 @@ With a career spanning technology leadership and strategic consulting, Srinivas 
 Srinivas holds an MS and Ph.D. in Computer Science from The Ohio State University, along with an MBA in Innovation & Strategy from the University of California, San Diego. He served for 10 years as an Adjunct Professor of Wireless Health at Case Western Reserve University, where he co-developed its Graduate Studies program in Digital Health.​
 As CTO, Srinivas led the team of engineers in all aspects of the design and development of Zena’s intelligent platform. His combined background in business strategy, technology strategy, human experience and AI/ML expertise was pivotal in the creation of Zena as a transformative “virtual brand assistant” technology.  ​
 Srinivas is a seasoned business executive with an extensive career in strategy consulting particularly in the areas of innovation, human experience, organizational development, strategic alignment, corporate innovation, business transformation, global competency, and new product development. But he’s also a seasoned technology executive. As Sr. Director of Business Development for Mindlance, Srinivas designed and launched the Smart Technology Innovation Program for Qualcomm Inc. As CTO for ReadySet Surgical, he developed the company’s technology strategy and roadmap for its end-to-end surgical supply chain service platform.​
-Srinivas received his MS and Ph.D. from The Ohio State University in Computer Science, and his MBA from the University of California, San Diego, specializing in Innovation and Strategy. He served as Adjunct Professor of Wireless Health at Case Western Reserve University for 10 years where he co-developed its program of Graduate Studies.`
+Srinivas received his MS and Ph.D. from The Ohio State University in Computer Science, and his MBA from the University of California, San Diego, specializing in Innovation and Strategy. He served as Adjunct Professor of Wireless Health at Case Western Reserve University for 10 years where he co-developed its program of Graduate Studies.`,
+                links: {
+                    linkedin: 'https://www.linkedin.com/in/sraghavan108/'
+                }
             }
+        }
+
+        function navigateToSocial(memberName, type, element) {
+            event.stopPropagation();
+            if (element) {
+                window.open(members[element.getAttribute('name')].links[element.getAttribute('type')], '_blank');
+            } else {
+                window.open(members[memberName].links[type], '_blank');
+            }
+
         }
 
         function showPopup(memberName) {
@@ -1356,6 +1394,12 @@ Srinivas received his MS and Ph.D. from The Ohio State University in Computer Sc
             image.src = `./assets/${members[memberName].image}`;
             const details = popup.getElementsByClassName('member-details')[0];
             details.innerText = members[memberName].details;
+            const socialLinks = popup.querySelectorAll('.team-social img');
+            const links = ['linkedin', 'twitter', 'youtube'];
+            socialLinks.forEach((link, index) => {
+                link.setAttribute('name', memberName);
+                link.setAttribute('type', links[index]);
+            })
             popup.style.display = 'flex';
         }
 
