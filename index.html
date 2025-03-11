@@ -174,7 +174,7 @@
         }
 
         #popup .close-btn {
-            top: 21%;
+            top: 15%;
             right: 12%;
         }
 
@@ -568,11 +568,23 @@
             align-items: center;
         }
 
+        .team-social {
+            display: flex;
+            gap: 18px
+        }
+
+        .team-bubble .team-social img {
+            flex: 1;
+            height: 36px;
+            width: 35px;
+        }
+
         #popup .team-bubble {
             text-align: left;
             background-color: transparent;
             margin-top: 0px;
             margin-bottom: 0px;
+            align-items: self-start;
         }
 
         #popup .team-bubble-container {
@@ -587,8 +599,8 @@
         }
 
         .team-bubble img {
-            width: 250px;
-            height: 385px;
+            width: 300px;
+            height: 443px;
             margin-bottom: 20px;
         }
 
@@ -781,6 +793,11 @@
 
             }
 
+            .team-bubble .team-social img {
+                height: 24px;
+                width: 24px;
+            }
+
             .hamburger {
                 flex: 1;
             }
@@ -842,6 +859,10 @@
 
             #contact .zena-contact-get-in-touch {
                 width: 80%;
+            }
+
+            #popup .team-bubble {
+                align-items: center;
             }
         }
     </style>
@@ -1025,16 +1046,36 @@
             <div class="advantage-brand-section">
                 <div class="team-bubble" onclick="showPopup('Avani Kanubaddi')"><img src='./assets/team-1.png' />Avani
                     Kanubaddi<p class="member-designation">CEO and Founder</p>
+                    <div class="team-social">
+                        <img src="./assets/linkedin.png">
+                        <img src="./assets/twitter.png">
+                        <img src="./assets/youtube.png">
+                    </div>
                 </div>
                 <div class="team-bubble" onclick="showPopup('Doug Rogers')"><img src='./assets/team-2.png' />Doug Rogers
                     <p class="member-designation">President and Co-founder</p>
+                    <div class="team-social">
+                        <img src="./assets/linkedin.png">
+                        <img src="./assets/twitter.png">
+                        <img src="./assets/youtube.png">
+                    </div>
                 </div>
                 <div class="team-bubble" onclick="showPopup('Lisa Buono')"><img src='./assets/team-3.png' />Lisa Buono<p
                         class="member-designation">Chief Client Success Officer(CCSO)</p>
+                    <div class="team-social">
+                        <img src="./assets/linkedin.png">
+                        <img src="./assets/twitter.png">
+                        <img src="./assets/youtube.png">
+                    </div>
                 </div>
                 <div class="team-bubble" onclick="showPopup('Srinivas Raghavan')"><img
                         src='./assets/team-4.png' />Srinivas Raghavan<p class="member-designation">Chief Technical
                         Officer</p>
+                    <div class="team-social">
+                        <img src="./assets/linkedin.png">
+                        <img src="./assets/twitter.png">
+                        <img src="./assets/youtube.png">
+                    </div>
                 </div>
             </div>
         </div>
@@ -1064,6 +1105,11 @@
 
                             <img src='' /><span id="name"></span>
                             <p class="member-designation"></p>
+                            <div class="team-social">
+                                <img src="./assets/linkedin.png">
+                                <img src="./assets/twitter.png">
+                                <img src="./assets/youtube.png">
+                            </div>
                         </div>
                         <div class="member-details">
 
@@ -1143,12 +1189,16 @@
         const leadFormCloseButton = leadForm.querySelector('.close-btn');
 
         const loadTeamSectionForMobile = () => {
-            document.querySelector('#team .advantage-brand-section').style.flexDirection = 'row';
-            if (window.innerWidth <= 768) {
-                setTimeout(() => {
-                    document.querySelector('#team .advantage-brand-section').style.flexDirection = 'column';
-                });
-            }
+            setTimeout(() => {
+                const teamBubbleContainer = document.querySelector('#team .advantage-brand-section');
+                teamBubbleContainer.style.flexDirection = 'row';
+                if (window.innerWidth <= 768) {
+                    setTimeout(() => {
+                        teamBubbleContainer.style.flexDirection = 'column';
+                    });
+                }
+            })
+
         }
 
         loadTeamSectionForMobile();
@@ -1266,15 +1316,14 @@
             'Avani Kanubaddi': {
                 image: 'team-1.png',
                 designation: 'CEO and Founder',
-                details: `    Avani is the visionary force behind Zena, where he leads the company’s business strategy and product innovation. The driving concept behind Zena originated from Avani’s steadfast belief that Artificial Intelligence could transform brand management. He envisioned an AI-powered virtual brand assistant capable of enhancing the abilities of brand teams fivefold, tenfold, or even more. Today, Zena is revolutionizing how brands operate—making teams faster, smarter, and more adaptable in an ever-changing market. From conception to execution, Avani has guided the team’s development of Zena into a cutting-edge solution to provide brands with a true competitive advantage. 
+                details: `Avani is the visionary force behind Zena, where he leads the company’s business strategy and product innovation. The driving concept behind Zena originated from Avani’s steadfast belief that Artificial Intelligence could transform brand management. He envisioned an AI-powered virtual brand assistant capable of enhancing the abilities of brand teams fivefold, tenfold, or even more. Today, Zena is revolutionizing how brands operate—making teams faster, smarter, and more adaptable in an ever-changing market. From conception to execution, Avani has guided the team’s development of Zena into a cutting-edge solution to provide brands with a true competitive advantage. 
     Before launching Zena, Avani served as the President and COO of a biotech startup focused on AI-driven drug discovery in neuroscience. This experience deepened his interest in artificial intelligence and its potential to enhance human intelligence, a perspective he now applies to brand management. Avani’s passion for brand building spans decades. He started as a Brand Manager for Centrum, where he honed the art and science of nurturing iconic brands. Later, he co-founded a consumer healthcare company, building multiple brands from the ground up using classic brand management techniques. Having faced the daily challenges encountered by brand managers, Avani now leverages AI to empower brand teams with unmatched speed, efficiency, and strategic capability. 
     Avani earned a BS in Marketing from Miami University and an MBA from Columbia University.`
             },
             'Doug Rogers': {
                 image: 'team-2.png',
                 designation: 'President and Co-Founder',
-                details: ` ​
-As President, Doug is responsible for Zena’s business development and shares responsibility with Avani for business strategy. He brings 40 years of consumer brand management and executive leadership experience to the Zena team, and helped guide the development of Zena’s “brand management intelligence.”​
+                details: ` As President, Doug is responsible for Zena’s business development and shares responsibility with Avani for business strategy. He brings 40 years of consumer brand management and executive leadership experience to the Zena team, and helped guide the development of Zena’s “brand management intelligence.”​
 Previously, as Global President for Wyeth Consumer Healthcare, Doug was responsible for a $3 billion brand portfolio which included some of the most well-known consumer healthcare brands in the world, including Advil, Centrum, Chapstick, Robitussin, Preparation H and Caltrate. Leading up to that role, Doug served in a variety of sales and marketing leadership positions throughout his career, including SVP of Marketing for American Home Foods, makers of Chef Boyardee, Polaner’s All Fruit and Gulden’s mustard.​
 Doug has spent the last 10+ years advising and consulting for a variety of consumer goods companies. He holds both a BA and MBA from Lehigh University.`
             },
