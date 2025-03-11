@@ -666,6 +666,10 @@
             display: none;
         }
 
+        .navbar .image-container img:not(:first-of-type) {
+            display: none;
+        }
+
         @media (max-width: 768px) {
             #popup {
                 position: fixed;
@@ -823,7 +827,7 @@
                 flex-direction: column;
             }
 
-            #leadForm button{
+            #leadForm button {
                 margin-left: auto;
                 margin-right: auto;
             }
@@ -882,6 +886,15 @@
             #popup .team-bubble {
                 align-items: center;
             }
+
+            .navbar .image-container img:first-of-type {
+                display: none;
+            }
+
+            .navbar .image-container img:not(:first-of-type) {
+                display: block;
+            }
+
         }
     </style>
 </head>
@@ -894,7 +907,8 @@
             <span></span>
         </div>
         <div class="image-container">
-            <img src='./assets/zena-logo.jpg' />
+            <img src='./assets/zena-logo-desktop.png' />
+            <img src='./assets/zena-logo.png' />
         </div>
         <div class="close-btn">&times;</div>
         <ul>
