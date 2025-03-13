@@ -113,7 +113,7 @@
         section:not(:first-of-type) {
             margin-top: 32px;
             padding: 60px 20px;
-            opacity: 0;
+            opacity: 1;
             transform: translateY(20px);
             transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
             position: relative;
@@ -1220,9 +1220,9 @@
                 if (window.innerWidth <= 768) {
                     setTimeout(() => {
                         teamBubbleContainer.style.flexDirection = 'column';
-                    });
+                    },100);
                 }
-            })
+            },100)
 
         }
 
