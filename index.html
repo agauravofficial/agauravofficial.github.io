@@ -113,7 +113,7 @@
         section:not(:first-of-type) {
             margin-top: 32px;
             padding: 60px 20px;
-            opacity: 1;
+            opacity: 0;
             transform: translateY(20px);
             transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
             position: relative;
@@ -665,7 +665,17 @@
             display: none;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 414px) {
+            section:not(:first-of-type) {
+                margin-top: 32px;
+                padding: 60px 20px;
+                opacity: 1;
+            }
+
+            section:last-of-type {
+                background: #000;
+            }
+
             #popup {
                 position: fixed;
                 top: 0;
@@ -877,6 +887,11 @@
 
             #contact .zena-contact-get-in-touch {
                 width: 80%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
             }
 
             #popup .team-bubble {
@@ -891,6 +906,9 @@
                 display: block;
             }
 
+            .navbar {
+                padding: 10px 40px;
+            }
         }
     </style>
 </head>
@@ -1016,8 +1034,10 @@
         <div class="advantage-brand">
             <div class="advantage-brand-section">
                 <p class="advantage-brand-subpara">
-                    &#8226; Zena is on constant standby, ready and able to answer your requests and questions.<br /><br />
-                    &#8226; Ask Zena about your market data, brand performance metrics, consumer research and more.<br /><br />
+                    &#8226; Zena is on constant standby, ready and able to answer your requests and
+                    questions.<br /><br />
+                    &#8226; Ask Zena about your market data, brand performance metrics, consumer research and
+                    more.<br /><br />
                     &#8226; Zena responds directly to your prompts and keeps a history of its discussions with you.
                 </p>
             </div>
@@ -1106,14 +1126,15 @@
         <div class="zena-contact-detail">
             <div class="zena-logo"></div>
             <div class="zena-contact-get-in-touch">
-                Get In Touch
+                
+                <div>Get In Touch</div>
                 <div class="zena-contact-para">
                     Brantuit AI
-                    <br/>
+                    <br />
                     10 West Road #1050
-                    <br/>
+                    <br />
                     Newton, PA 18940
-                    <br/>
+                    <br />
                     United States
                     <br /><br />
                     contact@brantuit.ai
@@ -1210,24 +1231,8 @@
         // JavaScript to toggle the mobile menu
         const hamburger = document.querySelector('.hamburger');
         const navbar = document.querySelector('.navbar');
-        const closeButton = document.querySelector('.close-btn');
+        const closeButton = navbar.querySelector('.close-btn');
         const leadFormCloseButton = leadForm.querySelector('.close-btn');
-
-        const loadTeamSectionForMobile = () => {
-            setTimeout(() => {
-                const teamBubbleContainer = document.querySelector('#team .advantage-brand-section');
-                teamBubbleContainer.style.flexDirection = 'row';
-                if (window.innerWidth <= 768) {
-                    setTimeout(() => {
-                        teamBubbleContainer.style.flexDirection = 'column';
-                    },100);
-                }
-            },100)
-
-        }
-
-        loadTeamSectionForMobile();
-        window.addEventListener('resize', loadTeamSectionForMobile);
 
         // Toggle menu open/close on hamburger click
         hamburger.addEventListener('click', function () {
@@ -1238,7 +1243,7 @@
         // Close the menu on close button click
         closeButton.addEventListener('click', function () {
             navbar.classList.remove('show');
-            closeButton.classList.toggle('show');
+            this.classList.remove('show');
         });
 
         // Open lead form on button click
@@ -1278,10 +1283,10 @@
         navLinks.forEach(link => {
             link.addEventListener('click', function () {
                 // Close the menu when a navigation link is clicked on mobile
-                if (window.innerWidth <= 768) {
+                if (window.innerWidth <= 414) {
                     navbar.classList.remove('show');
-                    document.querySelector('#team .advantage-brand-section').style.flexDirection = 'column'
                 }
+                closeButton.classList.remove('show');
             });
         });
 
@@ -1421,7 +1426,7 @@ Srinivas received his MS and Ph.D. from The Ohio State University in Computer Sc
             const button = document.querySelector('.navbar .button');
             const lastSectionRect = lastSection.getBoundingClientRect();
 
-            if (window.innerWidth <= 768 & lastSectionRect.top <= window.innerHeight && lastSectionRect.bottom >= 0) {
+            if (window.innerWidth <= 414 & lastSectionRect.top <= window.innerHeight && lastSectionRect.bottom >= 0) {
                 button.style.bottom = '-2%'; // Show button when the last section is in view
             } else {
                 button.style.bottom = '0%'; // Hide button otherwise
