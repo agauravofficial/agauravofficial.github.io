@@ -668,7 +668,8 @@
         .home-image{
             flex: 1;
         }
-        @media (max-width: 414px) {
+
+        @media (max-width: 768px) {
             section:not(:first-of-type) {
                 margin-top: 32px;
                 padding: 60px 20px;
@@ -890,10 +891,10 @@
 
             #contact .zena-contact-get-in-touch {
                 width: 80%;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
+                text-align: center;
+            }
+
+            #contact .zena-contact-para {
                 text-align: center;
             }
 
@@ -910,11 +911,10 @@
             }
 
             .navbar {
-                padding: 10px 40px;
-            }
-
-            #contact .zena-logo {
-                width: inherit;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color: #fff;
             }
         }
     </style>
@@ -977,13 +977,10 @@
                             fact finding and analyses.</p>
                     </div>
                 </div>
-
             </div>
-        </div>
-        </div>
-        <div class="home-detail-bottom">Empowering Brand Managers
-            to Achieve More</div>
-        <div class="hidden"><img src="./assets/zena-hand-mobile.png" /></div>
+            <div class="home-detail-bottom">Empowering Brand Managers
+                to Achieve More</div>
+            <div class="hidden"><img src="./assets/zena-hand-mobile.png" /></div>
         </div>
     </section>
 
@@ -1136,8 +1133,7 @@
         <div class="zena-contact-detail">
             <div class="zena-logo"></div>
             <div class="zena-contact-get-in-touch">
-
-                <div>Get In Touch</div>
+                Get In Touch
                 <div class="zena-contact-para">
                     Brantuit AI
                     <br />
@@ -1293,7 +1289,7 @@
         navLinks.forEach(link => {
             link.addEventListener('click', function () {
                 // Close the menu when a navigation link is clicked on mobile
-                if (window.innerWidth <= 414) {
+                if (window.innerWidth <= 768) {
                     navbar.classList.remove('show');
                 }
                 closeButton.classList.remove('show');
@@ -1436,7 +1432,7 @@ Srinivas received his MS and Ph.D. from The Ohio State University in Computer Sc
             const button = document.querySelector('.navbar .button');
             const lastSectionRect = lastSection.getBoundingClientRect();
 
-            if (window.innerWidth <= 414 & lastSectionRect.top <= window.innerHeight && lastSectionRect.bottom >= 0) {
+            if (window.innerWidth <= 768 & lastSectionRect.top <= window.innerHeight && lastSectionRect.bottom >= 0) {
                 button.style.bottom = '-2%'; // Show button when the last section is in view
             } else {
                 button.style.bottom = '0%'; // Hide button otherwise
