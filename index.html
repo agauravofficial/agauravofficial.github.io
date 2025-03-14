@@ -159,7 +159,6 @@
 
         }
 
-
         #leadForm .close-btn,
         #popup .close-btn {
             position: absolute;
@@ -171,11 +170,11 @@
 
         #leadForm .close-btn {
             top: 10%;
-            right: 34%;
+            right: 30%;
         }
 
         #popup .close-btn {
-            top: 15%;
+            top: 20%;
             right: 12%;
         }
 
@@ -187,12 +186,13 @@
             border: 1px solid #ccc;
             background-color: #D9D9D9;
             height: 30px;
+            margin-bottom:20px;
         }
 
         #leadForm button {
             background-color: #5FDAF3;
             border: none;
-            padding: 10px 20px;
+            padding: 20px 20px;
             cursor: pointer;
             border-radius: 5px;
             color: #404040;
@@ -205,8 +205,8 @@
             border-radius: 12px;
             font-family: Kanit;
             flex: 1;
-            margin-left: 20%;
-            margin-right: 20%;
+            margin-left: 15%;
+            margin-right: 15%;
 
         }
 
@@ -381,7 +381,7 @@
             align-items: center;
             align-self: center;
             width: 57%;
-            margin-top: 100px;
+            margin-top: 60px;
         }
 
         #about .about-para {
@@ -391,7 +391,7 @@
             line-height: 24px;
             letter-spacing: 0.42px;
             vertical-align: middle;
-            text-align: justify;
+            text-align: left;
             text-justify: inter-word;
             flex: 1;
         }
@@ -503,6 +503,7 @@
             font-weight: 400;
             font-size: 32px;
             vertical-align: middle;
+            line-height: 40px;
         }
 
         .advantage-brand {
@@ -541,6 +542,10 @@
             letter-spacing: 0.42px;
             vertical-align: middle;
             text-align: left;
+        }
+
+        .advantage-brand-subpara ul li {
+            margin: 24px auto;
         }
 
         #advantage-3 .advantage-title,
@@ -623,8 +628,6 @@
             display: flex;
             align-items: center;
             gap: 20px;
-            margin-left: 10%;
-            margin-right: 10%;
             border-radius: 20px;
             padding: 20px;
         }
@@ -635,7 +638,7 @@
 
         .team-bubble .member-designation {
             font-size: 20px;
-            line-height: 24px;
+            height: 50px;
         }
 
         #popup .team-social {
@@ -671,8 +674,13 @@
         .popup-content {
             display: flex;
             flex: 1;
+            width: 80%;
+
         }
 
+        #popup .member-designation{
+            height: auto;
+        }
         .member-details {
             font-family: Kanit;
             font-weight: 400;
@@ -680,14 +688,15 @@
             line-height: 24px;
             letter-spacing: -0.58px;
             vertical-align: middle;
-            text-align: justify;
+            text-align: left;
             width: 100%;
             overflow: scroll;
-            margin-top: 0px;
-            height: 550px;
+            height: 375px;
             overflow-y: auto;
             overflow-x: hidden;
-
+            margin-right: 5%;
+            margin-top: 10%;
+            margin-bottom: 10%;
         }
 
         .hidden {
@@ -701,6 +710,17 @@
         .home-image {
             flex: 1;
         }
+
+        @media (max-width: 1600px) {
+            .navbar ul {
+                flex: 1;
+            }
+
+            .navbar .button {
+                margin-left: 59px;
+            }
+        }
+
 
         @media (max-width: 1500px) {
             #leadForm .close-btn {
@@ -733,8 +753,8 @@
 
         @media (max-width: 1300px) {
             #popup .close-btn {
-                top: 23%;
-                right: 13%;
+                top: 20%;
+                right: 15%;
             }
         }
 
@@ -744,7 +764,11 @@
             }
         }
 
-        @media (max-width: 1480px) {
+        @media (max-width: 1660px) {
+            #team .advantage-brand-section {
+                width: 50%;
+            }
+
             .advantage-brand-section .team-bubble {
                 flex: 1 1 35%;
             }
@@ -765,7 +789,7 @@
 
             #about .about-zena-mission,
             .advantage-brand {
-                width: 67%;
+                width: 72%;
             }
         }
 
@@ -1111,7 +1135,7 @@
             </div>
             <div class="home-detail-bottom">Empowering Brand Managers
                 to Achieve More</div>
-            <div class="hidden"><img src="./assets/zena-hand-mobile.png"/></div>
+            <div class="hidden"><img src="./assets/zena-hand-mobile.png" /></div>
         </div>
     </section>
 
@@ -1124,7 +1148,7 @@
                     Today’s brand managers face a growing challenge.
                     <br />
                     They’re often stymied by too much data, too few<br />
-                    insights, too many tasks…and not enough resources <br />to bring it all together.
+                    insights, too many tasks…and not enough resources to bring it all together.
                     <br />
                     <br />
                     Leveraging decades of brand management<br />
@@ -1231,7 +1255,7 @@
                 Zena is customized to your brand.
             </div>
             <div class="advantage-subtitle">
-                Zena is built specifically for your use,
+                Zena is built specifically for your use,<br />
                 because it’s engineered from your brand’s data.
             </div>
             <img src="./assets/zena-home.png" />
