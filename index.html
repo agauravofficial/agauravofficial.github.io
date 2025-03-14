@@ -33,10 +33,6 @@
             display: flex;
         }
 
-        .navbar img {
-            margin: auto;
-            height: 70px;
-        }
 
         .navbar ul {
             list-style: none;
@@ -44,6 +40,8 @@
             margin: 0;
             padding: 0;
             flex: 2;
+            align-items: center;
+            justify-content: center;
         }
 
         .navbar ul li {
@@ -79,7 +77,10 @@
             border: none;
             padding: 10px 20px;
             cursor: pointer;
-            border-radius: 5px;
+            border-radius: 12px;
+            margin-top: 24px;
+            margin-bottom: 24px;
+            height: 65px;
         }
 
         .navbar .button:hover {
@@ -288,7 +289,7 @@
         #home .home-detail {
             margin-top: 100px;
             display: flex;
-            width: 25%;
+            width: 600px;
             flex-direction: column;
             align-self: self-start;
             margin-left: 20%;
@@ -334,6 +335,7 @@
             letter-spacing: 0.42px;
             text-align: left;
             vertical-align: middle;
+            margin-left: -115px;
         }
 
         #about {
@@ -445,8 +447,8 @@
             width: 50%;
         }
 
-        #platform,
         #advantage,
+        #advantage-1,
         #advantage-2,
         #advantage-3,
         #team {
@@ -665,7 +667,7 @@
             display: none;
         }
 
-        .home-image{
+        .home-image {
             flex: 1;
         }
 
@@ -846,6 +848,7 @@
                 right: 10%;
             }
 
+
             #leadForm .form-content {
                 max-width: 65%;
             }
@@ -927,7 +930,7 @@
             <span></span>
             <span></span>
         </div>
-        <div class="image-container">
+        <div class="image-container" style="justify-content: right;">
             <img src='./assets/zena-logo-desktop.jpg' />
             <img src='./assets/zena-logo.jpg' />
         </div>
@@ -935,7 +938,6 @@
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">Mission</a></li>
-            <li><a href="#platform">Platform</a></li>
             <li><a href="#advantage">Advantage</a></li>
             <li><a href="#team">Team</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -954,7 +956,7 @@
                 <div class="home-detail-content">
                     <div class="item">
                         <div class="home-image"><img src="./assets/home1.png" alt="Image 1"></div>
-                        <p>Creates easy-access repository of brand data and history.</p>
+                        <p>Creates an easy-access repository of brand data and history.</p>
                     </div>
                 </div>
                 <div class="home-detail-content">
@@ -1009,7 +1011,7 @@
 
     </section>
 
-    <section id="platform">
+    <section id="advantage">
         <div class="advantage-section">
             <div class="advantage-title">
                 The Zena Advantage
@@ -1032,7 +1034,7 @@
             </div>
         </div>
     </section>
-    <section id="advantage">
+    <section id="advantage-1">
         <div class="advantage-section">
             <div class="advantage-title">
                 Zena interacts with you
