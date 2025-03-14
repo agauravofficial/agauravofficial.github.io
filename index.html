@@ -170,7 +170,7 @@
         }
 
         #leadForm .close-btn {
-            top: 6%;
+            top: 10%;
             right: 34%;
         }
 
@@ -255,7 +255,7 @@
         }
 
         #home .home-top {
-            margin-top: 100px;
+            margin-top: 2rem;
             font-family: Kanit;
             font-weight: 400;
             font-size: 70px;
@@ -287,7 +287,7 @@
         }
 
         #home .home-detail {
-            margin-top: 100px;
+            margin-top: 4rem;
             display: flex;
             width: 600px;
             flex-direction: column;
@@ -297,7 +297,7 @@
         }
 
         #home .home-detail-bottom {
-            margin-top: 100px;
+            margin-top: 6rem;
             margin-bottom: 60px;
             font-family: Kanit;
             font-weight: 400;
@@ -330,7 +330,7 @@
             width: 50%;
             font-family: Kanit;
             font-weight: 400;
-            font-size: 20px;
+            font-size: 19px;
             line-height: 24px;
             letter-spacing: 0.42px;
             text-align: left;
@@ -348,6 +348,10 @@
             text-align: center;
             margin-top: 20px;
             margin-bottom: 20px;
+        }
+
+        #about .about-section:last-of-type {
+            text-align: left;
         }
 
         #about .about-title {
@@ -376,19 +380,29 @@
             gap: 72px;
             align-items: center;
             align-self: center;
-            width: 65%;
+            width: 57%;
             margin-top: 100px;
         }
 
         #about .about-para {
             font-family: Kanit;
             font-weight: 300;
-            font-size: 24px;
+            font-size: 20px;
             line-height: 24px;
             letter-spacing: 0.42px;
             vertical-align: middle;
             text-align: justify;
             text-justify: inter-word;
+            flex: 1;
+        }
+
+        .about-para .advantage-subtitle,
+        .advantage-subtitle {
+            text-align: center;
+        }
+
+        .about-zena-mission img {
+            width: 50%;
         }
 
         #contact {
@@ -467,7 +481,7 @@
         .advantage-title {
             font-weight: 400;
             font-size: 50px;
-            line-height: 24px;
+            line-height: 40px;
             font-family: Kanit;
             font-weight: 400;
             font-size: 50px;
@@ -478,7 +492,7 @@
         }
 
         #advantage-3 .advantage-title {
-            margin-top: 40px;
+            margin-top: 2rem;
         }
 
         .advantage-subtitle {
@@ -497,19 +511,20 @@
             display: flex;
             text-align: center;
             align-items: center;
-            gap: 100px;
+            gap: 50px;
             align-self: center;
-            width: 65%;
+            width: 57%;
         }
 
         .advantage-brand img {
-            flex: 1
+            flex: 1;
+            width: 50%;
         }
 
         .advantage-brand-section {
             flex: 1;
             font-family: 'Kanit', sans-serif;
-
+            flex-wrap: wrap;
         }
 
         .advantage-brand-para {
@@ -521,7 +536,7 @@
         .advantage-brand-subpara {
             font-family: Kanit;
             font-weight: 300;
-            font-size: 22px;
+            font-size: 19px;
             line-height: 24px;
             letter-spacing: 0.42px;
             vertical-align: middle;
@@ -530,11 +545,16 @@
 
         #advantage-3 .advantage-title,
         #advantage-3 img {
-            margin-top: 60px;
+            margin-top: 2rem;
+
+        }
+
+        #advantage-3 img {
+            width: 57%;
         }
 
         #advantage-3 .advantage-subtitle {
-            margin-top: 40px;
+            margin-top: 1rem;
         }
 
         .button {
@@ -550,7 +570,7 @@
         }
 
         #team .advantage-title {
-            margin-top: 64px;
+            margin-top: 2rem;
         }
 
         #team .advantage-brand-section {
@@ -559,8 +579,8 @@
         }
 
         .team-bubble {
-            margin-top: 100px;
-            margin-bottom: 100px;
+            margin-top: 3rem;
+            margin-bottom: 2rem;
             background-color: #E4E4E4;
             padding: 25px;
             border-radius: 20px;
@@ -580,13 +600,14 @@
 
         .team-social {
             display: flex;
-            gap: 18px
+            gap: 18px;
         }
 
         .team-bubble .team-social img {
-            flex: 1;
             height: 36px;
             width: 35px;
+            margin-bottom: 0px;
+            margin-left: auto;
         }
 
         #popup .team-bubble {
@@ -609,14 +630,18 @@
         }
 
         .team-bubble img {
-            width: 300px;
-            height: 443px;
             margin-bottom: 20px;
         }
 
         .team-bubble .member-designation {
             font-size: 20px;
             line-height: 24px;
+        }
+
+        #popup .team-social {
+            flex-direction: row;
+            width: 100%;
+            flex: 1;
         }
 
         #popup {
@@ -656,6 +681,12 @@
             letter-spacing: -0.58px;
             vertical-align: middle;
             text-align: justify;
+            width: 100%;
+            overflow: scroll;
+            margin-top: 0px;
+            height: 550px;
+            overflow-y: auto;
+            overflow-x: hidden;
 
         }
 
@@ -671,7 +702,107 @@
             flex: 1;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 1500px) {
+            #leadForm .close-btn {
+                top: 10%;
+                right: 31%;
+            }
+        }
+
+        @media (max-width: 1300px) {
+            #leadForm .close-btn {
+                top: 10%;
+                right: 28%;
+            }
+        }
+
+        @media (max-width: 1100px) {
+            #leadForm .close-btn {
+                top: 10%;
+                right: 23%;
+            }
+        }
+
+        
+        @media (max-width: 850px) {
+            #leadForm .close-btn {
+                top: 10%;
+                right: 20%;
+            }
+        }
+
+        @media (max-width: 1300px) {
+            #popup .close-btn {
+                top: 23%;
+                right: 13%;
+            }
+        }
+
+        @media (max-width: 1480px) {
+            #advantage-3 img {
+                width: 67%;
+            }
+        }
+
+        @media (max-width: 1480px) {
+            .advantage-brand-section .team-bubble {
+                flex: 1 1 35%;
+            }
+        }
+
+
+
+        @media (max-width: 1800px) {
+            #home .home-detail {
+                margin-left: 15%;
+            }
+        }
+
+        @media (max-width: 1640px) {
+            #home .home-detail {
+                margin-left: 5%;
+            }
+
+            #about .about-zena-mission,
+            .advantage-brand {
+                width: 67%;
+            }
+        }
+
+        @media (max-width: 1400px) {
+            #home .home-detail {
+                margin-left: 2%;
+            }
+
+            #about .about-zena-mission,
+            .advantage-brand {
+                width: 80%;
+            }
+        }
+
+        @media (max-width: 1250px) {
+            #home .home-detail {
+                margin-left: 1%;
+            }
+
+            #about .about-zena-mission,
+            .advantage-brand {
+                width: 90%;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            #home .home-detail {
+                margin-left: -5%;
+            }
+
+            #about .about-zena-mission,
+            .advantage-brand {
+                width: 93%;
+            }
+        }
+
+        @media (max-width: 1000px) {
             section:not(:first-of-type) {
                 margin-top: 32px;
                 padding: 60px 20px;
@@ -845,7 +976,7 @@
 
             #leadForm .close-btn {
                 top: 8%;
-                right: 10%;
+                right: 25%;
             }
 
 
@@ -879,7 +1010,7 @@
 
             #popup .close-btn {
                 top: 13%;
-                right: 15%;
+                right: 12%;
             }
 
             .member-details {
@@ -989,23 +1120,34 @@
     <section id="about">
         <div class="advantage-section">
             <div class="advantage-title">The Zena Mission</div>
-            <div class="advantage-subtitle">Empowering Brand Managers</div>
             <div class="about-section about-zena-mission">
                 <div class="about-para">
-                    Today’s brand managers face a growing challenge. They’re often stymied by too much data, too few
-                    insights, too many tasks…and not enough resources to bring it all together.
+                    <div class="advantage-subtitle">Empowering Brand Managers</div>
+                    Today’s brand managers face a growing challenge.
+                    <br />
+                    They’re often stymied by too much data, too few<br />
+                    insights, too many tasks…and not enough resources <br />to bring it all together.
                     <br />
                     <br />
-                    Leveraging decades of brand management
-                    expertise, we set out to help solve this dilemma. We partnered with AI/ML software experts to create
-                    a “virtual assistant” platform that was custom designed for the needs of CPG brand managers. The
-                    result was Zena, a transformative resource that expands every brand manager’s capabilities.
+                    Leveraging decades of brand management<br />
+                    expertise, we set out to help solve this dilemma.<br /> We partnered with AI/ML software experts to
+                    <br />create
+                    a “virtual assistant” platform that was <br />custom designed for the needs of CPG brand
+                    <br />managers. The
+                    result was Zena, a transformative <br />resource that expands every brand manager’s
+                    <br />capabilities.
                     <br />
                     <br />
-                    Zena was designed by brand managers, for brand managers.
+
                 </div>
                 <img src="./assets/about-zena.png" />
 
+
+            </div>
+            <div class="about-section">
+                <div class="about-para">
+                    Zena was designed <b>by</b> brand managers, <b>for</b> brand managers.
+                </div>
             </div>
         </div>
 
@@ -1016,67 +1158,79 @@
             <div class="advantage-title">
                 The Zena Advantage
             </div>
-
-            <div class="advantage-subtitle">
-                Zena expands your "brand intelligence."
-            </div>
         </div>
         <div class="advantage-brand">
             <img src="./assets/zena-advantage.png" />
             <div class="advantage-brand-section">
-                <p class="advantage-brand-subpara">
-                    &#8226; Uploads, organizes and stores all of your brand’s data, history and relevant
-                    information.<br /><br />
-                    &#8226; Examines large swaths of data to help find undiscovered patterns.<br /><br />
-                    &#8226; Helps you transform vast datasets into actionable insights.<br /><br />
-                    &#8226; The more you use Zena, the smarter Zena gets about your brand and your way!
-                </p>
+                <div class="advantage-brand-subpara">
+                    <p class="advantage-subtitle">
+                        Zena expands your <br />"brand intelligence."
+                    </p>
+                    <ul>
+                        <li>Uploads, organizes and stores all of your brand’s data, history and relevant
+                            information.</li>
+                        <li>
+                            Examines large swaths of data to help find undiscovered patterns.
+                        </li>
+                        <li>
+                            Helps you transform vast datasets into actionable insights.
+                        </li>
+                        <li>
+                            The more you use Zena, the smarter Zena gets about your brand and your way!
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
     <section id="advantage-1">
         <div class="advantage-section">
             <div class="advantage-title">
-                Zena interacts with you
+
             </div>
         </div>
         <div class="advantage-brand">
             <div class="advantage-brand-section">
-                <p class="advantage-brand-subpara">
-                    &#8226; Zena is on constant standby, ready and able to answer your requests and
-                    questions.<br /><br />
-                    &#8226; Ask Zena about your market data, brand performance metrics, consumer research and
-                    more.<br /><br />
-                    &#8226; Zena responds directly to your prompts and keeps a history of its discussions with you.
-                </p>
+                <div class="advantage-brand-subpara">
+                    <p class="advantage-subtitle">
+                        Zena interacts with you.
+                    </p>
+                    <ul>
+                        <li>Zena is on constant standby, ready and able to answer your requests and
+                            questions.</li>
+                        <li>Ask Zena about your market data, brand performance metrics, consumer research and
+                            more.</li>
+                        <li>Zena responds directly to your prompts and keeps a history of its discussions with you.</li>
+                    </ul>
+                </div>
             </div>
             <img src="./assets/brand-interact.png" />
         </div>
     </section>
     <section id="advantage-2">
         <div class="advantage-section">
-            <div class="advantage-title">
-                Zena Saves you Time!
-            </div>
         </div>
         <div class="advantage-brand">
             <img src="./assets/zena-productivity.png" />
 
             <div class="advantage-brand-section">
-                <p class="advantage-brand-subpara">
-                    &#8226; Performs labor-intensive tasks in a fraction of the usual time.
-                    <br /><br />
-                    &#8226; Zena unlocks the full potential of your data while saving time in the process.
-                    <br /><br />
-                    &#8226; Zena multiplies every brand manager’s capabilities.
-                </p>
+                <div class="advantage-brand-subpara">
+                    <p class="advantage-subtitle">
+                        Zena saves you time!
+                    </p>
+                    <ul>
+                        <li>Performs labor-intensive tasks in a fraction of the usual time.</li>
+                        <li>Zena unlocks the full potential of your data while saving time in the process.</li>
+                        <li>Zena multiplies every brand manager’s capabilities.</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
     <section id="advantage-3">
         <div class="advantage-section">
             <div class="advantage-title">
-                Zena customized to your brand
+                Zena is customized to your brand.
             </div>
             <div class="advantage-subtitle">
                 Zena is built specifically for your use,
@@ -1085,7 +1239,7 @@
             <img src="./assets/zena-home.png" />
 
         </div>
-        <div class="advantage-title">Empowering brand managers to achieve more</div>
+        <div class="advantage-title">Empowering Brand Managers to Achieve More.</div>
     </section>
 
     <section id="team">
@@ -1097,7 +1251,8 @@
                 <div class="team-bubble" onclick="showPopup('Avani Kanubaddi')"><img src='./assets/team-1.png' />Avani
                     Kanubaddi<p class="member-designation">CEO and Founder</p>
                     <div class="team-social">
-                        <img src="./assets/linkedin.png" onclick="navigateToSocial('Avani Kanubaddi', 'linkedin')">
+                        <img src="./assets/linkedin.png" onclick="navigateToSocial(this)" name="Avani Kanubaddi"
+                            type="linkedin">
                         <!-- <img src="./assets/twitter.png"> -->
                         <!-- <img src="./assets/youtube.png"> -->
                     </div>
@@ -1105,7 +1260,8 @@
                 <div class="team-bubble" onclick="showPopup('Doug Rogers')"><img src='./assets/team-2.png' />Doug Rogers
                     <p class="member-designation">President and Co-founder</p>
                     <div class="team-social">
-                        <img src="./assets/linkedin.png" onclick="navigateToSocial('Doug Rogers', 'linkedin')">
+                        <img src="./assets/linkedin.png" onclick="navigateToSocial(this)" name="Doug Rogers"
+                            type="linkedin">
                         <!-- <img src="./assets/twitter.png"> -->
                         <!-- <img src="./assets/youtube.png"> -->
                     </div>
@@ -1113,7 +1269,8 @@
                 <div class="team-bubble" onclick="showPopup('Lisa Buono')"><img src='./assets/team-3.png' />Lisa Buono<p
                         class="member-designation">Chief Client Success Officer(CCSO)</p>
                     <div class="team-social">
-                        <img src="./assets/linkedin.png" onclick="navigateToSocial('Lisa Buono', 'linkedin')">
+                        <img src="./assets/linkedin.png" onclick="navigateToSocial(this)" name="Lisa Buono"
+                            type="linkedin">
                         <!-- <img src="./assets/twitter.png"> -->
                         <!-- <img src="./assets/youtube.png"> -->
                     </div>
@@ -1122,7 +1279,8 @@
                         src='./assets/team-4.png' />Srinivas Raghavan<p class="member-designation">Chief Technical
                         Officer</p>
                     <div class="team-social">
-                        <img src="./assets/linkedin.png" onclick="navigateToSocial('Srinivas Raghavan', 'linkedin')">
+                        <img src="./assets/linkedin.png" onclick="navigateToSocial(this)" name="Srinivas Raghavan"
+                            type="linkedin">
                         <!-- <img src="./assets/twitter.png"> -->
                         <!-- <img src="./assets/youtube.png"> -->
                     </div>
@@ -1159,17 +1317,29 @@
                     <div class="team-bubble-container">
                         <div class="team-bubble">
 
-                            <img src='' /><span id="name"></span>
-                            <p class="member-designation"></p>
-                            <div class="team-social">
-                                <img src="./assets/linkedin.png" onclick="navigateToSocial(undefined, undefined, this)">
-                                <!-- <img src="./assets/twitter.png"> -->
-                                <!-- <img src="./assets/youtube.png"> -->
+                            <img src='' />
+                            <span id="name"></span>
+                            <div style="
+                            display: flex;
+                            align-items: center;
+                            width: 100%;
+                        ">
+                                <p class="member-designation">
+
+                                </p>
+                                <div class="team-social">
+                                    <img src="./assets/linkedin.png" onclick="navigateToSocial(this)">
+                                    <!-- <img src="./assets/twitter.png"> -->
+                                    <!-- <img src="./assets/youtube.png"> -->
+                                </div>
                             </div>
+
+
                         </div>
                         <div class="member-details">
 
                         </div>
+
                     </div>
                 </div>
 
@@ -1354,8 +1524,8 @@
             'Avani Kanubaddi': {
                 image: 'team-1.png',
                 designation: 'CEO and Founder',
-                details: `Avani is the visionary force behind Zena, where he leads the company’s business strategy and product innovation. The driving concept behind Zena originated from Avani’s steadfast belief that Artificial Intelligence could transform brand management. He envisioned an AI-powered virtual brand assistant capable of enhancing the abilities of brand teams fivefold, tenfold, or even more. Today, Zena is revolutionizing how brands operate—making teams faster, smarter, and more adaptable in an ever-changing market. From conception to execution, Avani has guided the team’s development of Zena into a cutting-edge solution to provide brands with a true competitive advantage. 
-    Before launching Zena, Avani served as the President and COO of a biotech startup focused on AI-driven drug discovery in neuroscience. This experience deepened his interest in artificial intelligence and its potential to enhance human intelligence, a perspective he now applies to brand management. Avani’s passion for brand building spans decades. He started as a Brand Manager for Centrum, where he honed the art and science of nurturing iconic brands. Later, he co-founded a consumer healthcare company, building multiple brands from the ground up using classic brand management techniques. Having faced the daily challenges encountered by brand managers, Avani now leverages AI to empower brand teams with unmatched speed, efficiency, and strategic capability. 
+                details: `Avani is the visionary force behind Zena, where he leads the company’s business strategy and product innovation. The driving concept behind Zena originated from Avani’s steadfast belief that Artificial Intelligence could transform brand management. He envisioned an AI-powered virtual brand assistant capable of enhancing the abilities of brand teams fivefold, tenfold, or even more. Today, Zena is revolutionizing how brands operate—making teams faster, smarter, and more adaptable in an ever-changing market. From conception to execution, Avani has guided the team’s development of Zena into a cutting-edge solution to provide brands with a true competitive advantage.<br/><br/>
+    Before launching Zena, Avani served as the President and COO of a biotech startup focused on AI-driven drug discovery in neuroscience. This experience deepened his interest in artificial intelligence and its potential to enhance human intelligence, a perspective he now applies to brand management. Avani’s passion for brand building spans decades. He started as a Brand Manager for Centrum, where he honed the art and science of nurturing iconic brands. Later, he co-founded a consumer healthcare company, building multiple brands from the ground up using classic brand management techniques. Having faced the daily challenges encountered by brand managers, Avani now leverages AI to empower brand teams with unmatched speed, efficiency, and strategic capability.<br/><br/>
     Avani earned a BS in Marketing from Miami University and an MBA from Columbia University.`,
                 links: {
                     linkedin: 'https://www.linkedin.com/in/avani-k-21603225/'
@@ -1364,9 +1534,9 @@
             'Doug Rogers': {
                 image: 'team-2.png',
                 designation: 'President and Co-Founder',
-                details: ` As President, Doug is responsible for Zena’s business development and shares responsibility with Avani for business strategy. He brings 40 years of consumer brand management and executive leadership experience to the Zena team, and helped guide the development of Zena’s “brand management intelligence.”​
+                details: ` As President, Doug is responsible for Zena’s business development and shares responsibility with Avani for business strategy. He brings 40 years of consumer brand management and executive leadership experience to the Zena team, and helped guide the development of Zena’s “brand management intelligence.”​<br/><br/>
 Previously, as Global President for Wyeth Consumer Healthcare, Doug was responsible for a $3 billion brand portfolio which included some of the most well-known consumer healthcare brands in the world, including Advil, Centrum, Chapstick, Robitussin, Preparation H and Caltrate. Leading up to that role, Doug served in a variety of sales and marketing leadership positions throughout his career, including SVP of Marketing for American Home Foods, makers of Chef Boyardee, Polaner’s All Fruit and Gulden’s mustard.​
-Doug has spent the last 10+ years advising and consulting for a variety of consumer goods companies. He holds both a BA and MBA from Lehigh University.`,
+​<br/><br/>Doug has spent the last 10+ years advising and consulting for a variety of consumer goods companies. He holds both a BA and MBA from Lehigh University.`,
                 links: {
                     linkedin: 'https://www.linkedin.com/in/douglas-rogers-80126a17/'
                 }
@@ -1375,8 +1545,8 @@ Doug has spent the last 10+ years advising and consulting for a variety of consu
                 image: 'team-3.png',
                 designation: 'Chief Client Success Officer(CCSO)',
                 details: `Lisa is a career marketing professional with over 40 years of brand management, brand consulting and market data/research experience. Most recently, she was Insights Principal within IRI’s Healthcare practice where she was responsible for data management and analyses for 10 consumer healthcare clients. ​
-Lisa’s brand experience is wide ranging, especially within the consumer healthcare sector where she’s personally managed brand portfolios for Wyeth Consumer Healthcare (Centrum, Caltrate, Robitussin, Dimetapp, Advil, Primatene, Chapstick, Denorex), and consulted for Blacksmith/Prestige (Luden’s, Pediacare, Nasalcrom). Her combined extensive brand management and data analytics expertise was invaluable in helping to train Zena.​
-Lisa has a BS in Chemistry and Math from Montclair State University, and an MBA from Rutgers.`,
+​<br/><br/>Lisa’s brand experience is wide ranging, especially within the consumer healthcare sector where she’s personally managed brand portfolios for Wyeth Consumer Healthcare (Centrum, Caltrate, Robitussin, Dimetapp, Advil, Primatene, Chapstick, Denorex), and consulted for Blacksmith/Prestige (Luden’s, Pediacare, Nasalcrom). Her combined extensive brand management and data analytics expertise was invaluable in helping to train Zena.​
+​<br/><br/>Lisa has a BS in Chemistry and Math from Montclair State University, and an MBA from Rutgers.`,
                 links: {
                     linkedin: 'https://www.linkedin.com/in/lisacbuono/'
                 }
@@ -1385,18 +1555,18 @@ Lisa has a BS in Chemistry and Math from Montclair State University, and an MBA 
                 image: 'team-4.png',
                 designation: 'Cheif Technical Officer',
                 details: `As Chief Technology Officer, Srinivas Raghavan led the engineering team in designing and developing Zena’s intelligent platform, bringing together expertise in business strategy, technology, human experience, and AI/ML. His deep understanding of innovation, automation, and user-centric design played a pivotal role in shaping Zena as a transformative virtual brand assistant, making brand management more intelligent and intuitive.​
-With a career spanning technology leadership and strategic consulting, Srinivas has worked extensively in corporate innovation, organizational development, and product transformation. Prior to Zena, he was Senior Director of Business Development at Mindlance, where he designed and launched the Smart Technology Innovation Program for Qualcomm Inc.. As CTO of ReadySet Surgical, he developed the company’s technology strategy and roadmap, leading the development of its end-to-end surgical supply chain platform.​
-Srinivas holds an MS and Ph.D. in Computer Science from The Ohio State University, along with an MBA in Innovation & Strategy from the University of California, San Diego. He served for 10 years as an Adjunct Professor of Wireless Health at Case Western Reserve University, where he co-developed its Graduate Studies program in Digital Health.​
-As CTO, Srinivas led the team of engineers in all aspects of the design and development of Zena’s intelligent platform. His combined background in business strategy, technology strategy, human experience and AI/ML expertise was pivotal in the creation of Zena as a transformative “virtual brand assistant” technology.  ​
-Srinivas is a seasoned business executive with an extensive career in strategy consulting particularly in the areas of innovation, human experience, organizational development, strategic alignment, corporate innovation, business transformation, global competency, and new product development. But he’s also a seasoned technology executive. As Sr. Director of Business Development for Mindlance, Srinivas designed and launched the Smart Technology Innovation Program for Qualcomm Inc. As CTO for ReadySet Surgical, he developed the company’s technology strategy and roadmap for its end-to-end surgical supply chain service platform.​
-Srinivas received his MS and Ph.D. from The Ohio State University in Computer Science, and his MBA from the University of California, San Diego, specializing in Innovation and Strategy. He served as Adjunct Professor of Wireless Health at Case Western Reserve University for 10 years where he co-developed its program of Graduate Studies.`,
+​<br/><br/>With a career spanning technology leadership and strategic consulting, Srinivas has worked extensively in corporate innovation, organizational development, and product transformation. Prior to Zena, he was Senior Director of Business Development at Mindlance, where he designed and launched the Smart Technology Innovation Program for Qualcomm Inc.. As CTO of ReadySet Surgical, he developed the company’s technology strategy and roadmap, leading the development of its end-to-end surgical supply chain platform.​
+​<br/><br/>Srinivas holds an MS and Ph.D. in Computer Science from The Ohio State University, along with an MBA in Innovation & Strategy from the University of California, San Diego. He served for 10 years as an Adjunct Professor of Wireless Health at Case Western Reserve University, where he co-developed its Graduate Studies program in Digital Health.​
+​<br/><br/>As CTO, Srinivas led the team of engineers in all aspects of the design and development of Zena’s intelligent platform. His combined background in business strategy, technology strategy, human experience and AI/ML expertise was pivotal in the creation of Zena as a transformative “virtual brand assistant” technology.  ​
+​<br/><br/>Srinivas is a seasoned business executive with an extensive career in strategy consulting particularly in the areas of innovation, human experience, organizational development, strategic alignment, corporate innovation, business transformation, global competency, and new product development. But he’s also a seasoned technology executive. As Sr. Director of Business Development for Mindlance, Srinivas designed and launched the Smart Technology Innovation Program for Qualcomm Inc. As CTO for ReadySet Surgical, he developed the company’s technology strategy and roadmap for its end-to-end surgical supply chain service platform.​
+​<br/><br/>Srinivas received his MS and Ph.D. from The Ohio State University in Computer Science, and his MBA from the University of California, San Diego, specializing in Innovation and Strategy. He served as Adjunct Professor of Wireless Health at Case Western Reserve University for 10 years where he co-developed its program of Graduate Studies.`,
                 links: {
                     linkedin: 'https://www.linkedin.com/in/sraghavan108/'
                 }
             }
         }
 
-        function navigateToSocial(memberName, type, element) {
+        function navigateToSocial(element) {
             event.stopPropagation();
             if (element) {
                 window.open(members[element.getAttribute('name')].links[element.getAttribute('type')], '_blank');
@@ -1415,7 +1585,7 @@ Srinivas received his MS and Ph.D. from The Ohio State University in Computer Sc
             const image = popup.getElementsByTagName('img')[0];
             image.src = `./assets/${members[memberName].image}`;
             const details = popup.getElementsByClassName('member-details')[0];
-            details.innerText = members[memberName].details;
+            details.innerHTML = members[memberName].details;
             const socialLinks = popup.querySelectorAll('.team-social img');
             const links = ['linkedin', 'twitter', 'youtube'];
             socialLinks.forEach((link, index) => {
