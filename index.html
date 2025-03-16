@@ -168,13 +168,13 @@
         }
 
         #leadForm .close-btn {
-            top: -2%;
-            right: 35%;
+            top: 0;
+            right: 0;
         }
 
         #popup .close-btn {
-            top: 20%;
-            right: 12%;
+            top: 5px;
+            right: 60px;
         }
 
 
@@ -185,7 +185,7 @@
             border: 1px solid #ccc;
             background-color: #D9D9D9;
             height: 30px;
-            margin-bottom:20px;
+            margin-bottom: 20px;
         }
 
         #leadForm button {
@@ -217,6 +217,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            margin-top: -1rem;
         }
 
         #leadForm .checkbox-container #insights {
@@ -238,14 +239,24 @@
             gap: 10px;
         }
 
-        .form-row input {
-            width: 48%;
+        #leadForm .form-row button {
+            width: 50%;
             /* Ensures two inputs are side by side with some spacing */
         }
 
-        .form-row button {
-            width: 50%;
-            /* Ensures two inputs are side by side with some spacing */
+        #leadForm img,
+        #leadForm h2 {
+            margin-top: -2rem;
+        }
+
+        .form-row-2 {
+            display: flex;
+            flex-direction: column;
+            width: 47%;
+        }
+
+        #leadForm .form-row-2 input {
+            width: 100%;
         }
 
         #home {
@@ -657,7 +668,6 @@
             height: 100%;
             background-color: #999898;
             padding: 25px;
-            border-radius: 20px;
             flex: 1;
             font-family: Kanit;
             font-weight: 400;
@@ -679,9 +689,10 @@
 
         }
 
-        #popup .member-designation{
+        #popup .member-designation {
             height: auto;
         }
+
         .member-details {
             font-family: Kanit;
             font-weight: 400;
@@ -696,8 +707,6 @@
             overflow-y: auto;
             overflow-x: hidden;
             margin-right: 5%;
-            margin-top: 10%;
-            margin-bottom: 10%;
         }
 
         .hidden {
@@ -723,42 +732,6 @@
         }
 
 
-        @media (max-width: 1500px) {
-            #leadForm .close-btn {
-                top: 10%;
-                right: 31%;
-            }
-        }
-
-        @media (max-width: 1300px) {
-            #leadForm .close-btn {
-                top: 10%;
-                right: 28%;
-            }
-        }
-
-        @media (max-width: 1100px) {
-            #leadForm .close-btn {
-                top: 10%;
-                right: 23%;
-            }
-        }
-
-
-        @media (max-width: 850px) {
-            #leadForm .close-btn {
-                top: 10%;
-                right: 20%;
-            }
-        }
-
-        @media (max-width: 1300px) {
-            #popup .close-btn {
-                top: 20%;
-                right: 15%;
-            }
-        }
-
         @media (max-width: 1480px) {
             #advantage-3 img {
                 width: 67%;
@@ -777,7 +750,7 @@
 
 
         @media (max-width: 1400px) {
-          
+
             #about .about-zena-mission,
             .advantage-brand {
                 width: 80%;
@@ -785,6 +758,7 @@
         }
 
         @media (max-width: 1250px) {
+
             #about .about-zena-mission,
             .advantage-brand {
                 width: 90%;
@@ -972,8 +946,8 @@
             }
 
             #leadForm .close-btn {
-                top: 8%;
-                right: 25%;
+                top: 0;
+                right: 0;
             }
 
 
@@ -1004,8 +978,8 @@
             }
 
             #popup .close-btn {
-                top: 13%;
-                right: 12%;
+                top: 5px;
+                right: 60px;
             }
 
             .member-details {
@@ -1205,7 +1179,7 @@
         <div class="advantage-section">
         </div>
         <div class="advantage-brand">
-            <img src="./assets/zena-productivity.png" />
+            <img src="./assets/zena-productivity.jpg" />
 
             <div class="advantage-brand-section">
                 <div class="advantage-brand-subpara">
@@ -1361,12 +1335,14 @@
                     pattern="^\+?[0-9]{1,4}?[-. ]?([0-9]{1,4})[-. ]?([0-9]{1,4})[-. ]?([0-9]{1,9})$" required>
 
                 <div class="form-row">
-                    <div>
+                    <div class="form-row-2">
                         <label for="firstname">First Name*</label>
+
                         <input type="text" id="firstname" name="firstname" required minlength="2" maxlength="100">
                     </div>
-                    <div>
+                    <div class="form-row-2">
                         <label for="lastname">Last Name*</label>
+
                         <input type="text" id="lastname" name="lastname" required minlength="2" maxlength="100">
                     </div>
                 </div>
@@ -1375,13 +1351,13 @@
                 <input type="text" id="company" name="company" required minlength="5" maxlength="100">
 
                 <div class="form-row">
-                    <div>
-                        <label for="department">Department</label>
+                    <div  class="form-row-2">
+                        <label for="firstname">Department</label>
                         <input type="text" id="department" name="department">
                     </div>
-                    <div>
-                        <label for="teamsize">Team Size</label>
-                        <input type="text" id="teamsize" name="teamsize" min="0" max="50">
+                    <div  class="form-row-2">
+                        <label for="lastname">Team Size</label>
+                        <input type="text" id="teamsize" name="teamsize" required minlength="0" maxlength="50">
                     </div>
                 </div>
                 <div class="checkbox-container">
