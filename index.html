@@ -155,7 +155,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-
+            position: relative;
         }
 
         #leadForm .close-btn,
@@ -168,15 +168,15 @@
         }
 
         #leadForm .close-btn {
-            top: 0;
-            right: 0;
+            top: 0%;
+            right: 5%;
         }
+
 
         #popup .close-btn {
-            top: 5px;
-            right: 60px;
+            top: 1%;
+            right: 2%;
         }
-
 
         #leadForm input {
             width: 100%;
@@ -408,6 +408,11 @@
             flex: 1;
         }
 
+        #about .about-para.bigger {
+            font-size: 24px;
+            text-align: center;
+        }
+
         .about-para .advantage-subtitle,
         .advantage-subtitle {
             text-align: center;
@@ -604,7 +609,7 @@
             flex: 1;
             font-family: Kanit;
             font-weight: 400;
-            font-size: 32px;
+            font-size: 30px;
             line-height: 30px;
             letter-spacing: -0.58px;
             text-align: center;
@@ -650,7 +655,6 @@
 
         .team-bubble .member-designation {
             font-size: 20px;
-            height: 50px;
         }
 
         #popup .team-social {
@@ -686,6 +690,7 @@
             display: flex;
             flex: 1;
             width: 50%;
+            position: relative;
 
         }
 
@@ -719,6 +724,12 @@
 
         .home-image {
             flex: 1;
+        }
+
+        @media (min-width: 1601px) {
+            #about .about-para {
+                margin-left: 3rem;
+            }
         }
 
         @media (max-width: 1600px) {
@@ -761,6 +772,10 @@
         @media (max-width: 1000px) {
 
             #team .advantage-brand-section {
+                width: 100%;
+            }
+
+            .advantage-brand-section {
                 width: 100%;
             }
 
@@ -846,9 +861,18 @@
                 width: 75%;
                 align-self: unset;
                 margin-left: unset;
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            #home .home-detail-content {
+                flex: 1 1 50%;
+                display: flex;
             }
 
             #home .home-detail-content p {
+                width: 80%;
+                text-align: center;
                 margin-left: unset;
             }
 
@@ -865,28 +889,53 @@
                 flex-direction: column-reverse;
             }
 
+            .advantage-brand {
+                width: 100%;
+            }
+
             .advantage-brand:nth-child(even) {
-                width: auto;
                 flex-direction: column;
             }
 
             .advantage-brand:nth-child(odd) {
-                width: auto;
                 flex-direction: column-reverse;
             }
 
             #about .about-section img,
             .advantage-brand img {
-                width: 380px;
+                width: 100%;
             }
 
-            #about .about-para,
+            .about-section .about-para {
+                text-align: center;
+            }
+
+            #home .home-detail-content .item {
+                flex-direction: column;
+                gap: 0px;
+            }
+
+
+            .about-section .about-para,
             .advantage-brand-subpara {
                 text-align: center;
             }
 
+
+            .advantage-brand-subpara {
+                text-align: left;
+            }
+
+            .home-image img {
+                /*height: 72px;*/
+            }
+
+            #about .about-section .about-para.justified {
+                text-align: justify;
+            }
+
             #advantage .advantage-brand {
-                width: auto;
+                width: 90%;
                 flex-direction: column-reverse;
             }
 
@@ -896,7 +945,7 @@
 
             #advantage-3 img {
                 margin-top: 16px;
-                width: 380px;
+                width: 100%;
             }
 
             #team .advantage-title {
@@ -946,10 +995,9 @@
             }
 
             #leadForm .close-btn {
-                top: 10px;
-                right: 30px;
+                top: 0%;
+                right: 5%;
             }
-
 
             #leadForm .form-content {
                 max-width: 65%;
@@ -988,8 +1036,8 @@
             }
 
             #popup .close-btn {
-                top: 20px;
-                right: 30px;
+                top: 1%;
+                right: 2%;
             }
 
             .member-details {
@@ -1064,33 +1112,32 @@
             <div class="home-detail">
                 <div class="home-detail-content">
                     <div class="item">
-                        <div class="home-image"><img src="./assets/home1.png" alt="Image 1"></div>
+                        <div class="home-image"><img src="./assets/home1.svg" alt="Image 1"></div>
                         <p>Creates an easy-access repository of brand data and history.</p>
                     </div>
                 </div>
                 <div class="home-detail-content">
                     <div class="item">
-                        <div class="home-image"><img src="./assets/home2.png" alt="Image 2"></div>
+                        <div class="home-image"><img src="./assets/home2.svg" alt="Image 2"></div>
                         <p>Intelligent chatbot responds to queries and requests.</p>
                     </div>
                 </div>
                 <div class="home-detail-content">
                     <div class="item">
-                        <div class="home-image"><img src="./assets/home3.png" alt="Image 3"></div>
+                        <div class="home-image"><img src="./assets/home3.svg" alt="Image 3"></div>
                         <p>Helps discover patterns and
                             insights within your brand’s data.​</p>
                     </div>
                 </div>
                 <div class="home-detail-content">
                     <div class="item">
-                        <div class="home-image"><img src="./assets/home4.png" alt="Image 4"></div>
+                        <div class="home-image"><img src="./assets/home4.svg" alt="Image 4"></div>
                         <p>Saves valuable time on
                             fact finding and analyses.</p>
                     </div>
                 </div>
             </div>
-            <div class="home-detail-bottom">Empowering Brand Managers
-                to Achieve More</div>
+            <div class="home-detail-bottom">Empowering Brand Managers to Achieve More.&#8482;</div>
             <div class="hidden"><img src="./assets/zena-hand-mobile.png" /></div>
         </div>
     </section>
@@ -1099,31 +1146,17 @@
         <div class="advantage-section">
             <div class="advantage-title">The Zena Mission</div>
             <div class="about-section about-zena-mission">
-                <div class="about-para">
+                <div class="about-para justified">
                     <div class="advantage-subtitle">Empowering Brand Managers</div>
-                    Today’s brand managers face a growing challenge.
-                    <br />
-                    They’re often stymied by too much data, too few<br />
-                    insights, too many tasks…and not enough resources to bring it all together.
-                    <br />
-                    <br />
-                    Leveraging decades of brand management<br />
-                    expertise, we set out to help solve this dilemma.<br /> We partnered with AI/ML software experts to
-                    <br />create
-                    a “virtual assistant” platform that was <br />custom designed for the needs of CPG brand
-                    <br />managers. The
-                    result was Zena, a transformative <br />resource that expands every brand manager’s
-                    <br />capabilities.
-                    <br />
-                    <br />
-
+                    <div id="aboutText">
+                    </div>                    
                 </div>
                 <img src="./assets/about-zena.png" />
 
 
             </div>
             <div class="about-section">
-                <div class="about-para">
+                <div class="about-para bigger">
                     Zena was designed <i>by</i> brand managers, <i>for</i> brand managers.
                 </div>
             </div>
@@ -1217,7 +1250,7 @@
             <img src="./assets/zena-home.png" />
 
         </div>
-        <div class="advantage-title">Empowering Brand Managers to Achieve More.</div>
+        <div class="advantage-title">Empowering Brand Managers to Achieve More.&#8482;</div>
     </section>
 
     <section id="team">
@@ -1245,7 +1278,7 @@
                     </div>
                 </div>
                 <div class="team-bubble" onclick="showPopup('Lisa Buono')"><img src='./assets/team-3.png' />Lisa Buono<p
-                        class="member-designation">Chief Client Success Officer(CCSO)</p>
+                        class="member-designation">Chief Client Success Officer</p>
                     <div class="team-social">
                         <img src="./assets/linkedin.png" onclick="navigateToSocial(this)" name="Lisa Buono"
                             type="linkedin">
@@ -1281,16 +1314,16 @@
                     <br />
                     United States
                     <br /><br />
-                    contact@brantuit.ai
+                    <a style="color:white" href="mailto:contact@brantuit.ai">contact@brantuit.ai</a>
                 </div>
             </div>
         </div>
     </section>
 
     <div id="popup">
-        <span class="close-btn" onclick="closePopup()">&times;</span>
         <div class="advantage-section">
             <div class="popup-content">
+                <span class="close-btn" onclick="closePopup()">&times;</span>
                 <div class="advantage-brand-section">
                     <div class="team-bubble-container">
                         <div class="team-bubble">
@@ -1330,9 +1363,10 @@
     </div>
     <!-- Lead Form -->
     <div id="leadForm">
-        <span class="close-btn">&times;</span>
 
         <div class="form-content">
+            <span class="close-btn">&times;</span>
+
             <div>
                 <img src="./assets/zena-transparent.png" />
             </div>
@@ -1387,6 +1421,33 @@
     </div>
 
     <script>
+
+        const aboutTextContent = `                    Today’s brand managers face a growing challenge.
+                    <br />
+                    They’re often stymied by too much data, too few<br />
+                    insights, too many tasks…and not enough resources<br/> to bring it all together.
+                    <br />
+                    <br />
+                    Leveraging decades of brand management<br />
+                    expertise, we set out to help solve this dilemma.<br /> We partnered with AI/ML software experts to
+                    <br />create
+                    a “virtual assistant” platform that was <br />custom designed for the needs of CPG brand
+                    <br />managers. The
+                    result was Zena, a transformative <br />resource that expands every brand manager’s
+                    <br />capabilities.
+                    <br />
+                    <br />`
+
+        function toggleText() {
+            if(window.screen.width <= 1000){
+                aboutText.innerHTML = aboutTextContent.replace(/<br \/>/g, '');
+            } else {
+                aboutText.innerHTML = aboutTextContent;
+            }
+        }
+
+        toggleText();
+        window.addEventListener('resize', toggleText);
         // JavaScript to toggle the mobile menu
         const hamburger = document.querySelector('.hamburger');
         const navbar = document.querySelector('.navbar');
