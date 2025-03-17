@@ -734,17 +734,6 @@
             }
         }
 
-        @media (max-width: 1660px) {
-            #team .advantage-brand-section {
-                width: 100%;
-            }
-
-            .advantage-brand-section .team-bubble {
-                flex: 1 1 35%;
-            }
-        }
-
-
         @media (max-width: 1400px) {
 
             #about .about-zena-mission,
@@ -770,10 +759,14 @@
         }
 
         @media (max-width: 1000px) {
+
+            #team .advantage-brand-section {
+                width: 100%;
+            }
+
             section:not(:first-of-type) {
                 margin-top: 32px;
                 padding: 60px 20px;
-                opacity: 1;
             }
 
             section:last-of-type {
@@ -890,7 +883,6 @@
             #about .about-para,
             .advantage-brand-subpara {
                 text-align: center;
-                width: 90%;
             }
 
             #advantage .advantage-brand {
@@ -954,8 +946,8 @@
             }
 
             #leadForm .close-btn {
-                top: 0;
-                right: 0;
+                top: 10px;
+                right: 30px;
             }
 
 
@@ -996,8 +988,8 @@
             }
 
             #popup .close-btn {
-                top: 5px;
-                right: 60px;
+                top: 20px;
+                right: 30px;
             }
 
             .member-details {
@@ -1471,7 +1463,7 @@
                     entry.target.classList.add('visible');
                 }
             });
-        }, { threshold: 0.5 }); // Trigger when 50% of the section is in view
+        }, { threshold: 0.1 }); // Trigger when 50% of the section is in view
 
         sections.forEach(section => {
             observer.observe(section);
