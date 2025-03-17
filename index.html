@@ -725,10 +725,6 @@
             .navbar ul {
                 flex: 1;
             }
-
-            .navbar .button {
-                margin-left: 59px;
-            }
         }
 
 
@@ -740,7 +736,7 @@
 
         @media (max-width: 1660px) {
             #team .advantage-brand-section {
-                width: 50%;
+                width: 100%;
             }
 
             .advantage-brand-section .team-bubble {
@@ -944,6 +940,14 @@
                 flex-direction: column;
             }
 
+            .form-row-2 {
+                width: 100%;
+            }
+
+            input {
+                margin-bottom: 10px;
+            }
+
             #leadForm button {
                 margin-left: auto;
                 margin-right: auto;
@@ -957,6 +961,8 @@
 
             #leadForm .form-content {
                 max-width: 65%;
+                height: 80vh;
+                overflow: auto;
             }
 
             #leadForm .form-content img {
@@ -975,13 +981,18 @@
                 background-size: cover;
             }
 
-            .hidden img{
-            width:100%;
+            .hidden img {
+                width: 100%;
+            }
+
+            .popup-content {
+                width: 90%;
             }
 
             #popup .team-bubble-container {
                 flex-direction: column;
                 align-items: center;
+                height: 90vh;
             }
 
             #popup .close-btn {
@@ -1359,11 +1370,11 @@
                 <input type="text" id="company" name="company" required minlength="5" maxlength="100">
 
                 <div class="form-row">
-                    <div  class="form-row-2">
+                    <div class="form-row-2">
                         <label for="firstname">Department</label>
                         <input type="text" id="department" name="department">
                     </div>
-                    <div  class="form-row-2">
+                    <div class="form-row-2">
                         <label for="lastname">Team Size</label>
                         <input type="text" id="teamsize" name="teamsize" required minlength="0" maxlength="50">
                     </div>
@@ -1482,7 +1493,7 @@
                 document.querySelector(link).scrollIntoView({
                     behavior: 'smooth'
                 });
-                const headerOffset = 128;
+                const headerOffset = 90;
                 const elementPosition = document.getElementById(link.replace('#', '')).getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
                 if (index !== 0)
@@ -1583,9 +1594,9 @@ Previously, as Global President for Wyeth Consumer Healthcare, Doug was responsi
             const lastSectionRect = lastSection.getBoundingClientRect();
 
             if (window.innerWidth <= 768 & lastSectionRect.top <= window.innerHeight && lastSectionRect.bottom >= 0) {
-                button.style.bottom = '-2%'; // Show button when the last section is in view
+                button.style.bottom = '-5rem'; // Show button when the last section is in view
             } else {
-                button.style.bottom = '0%'; // Hide button otherwise
+                button.style.bottom = '-4rem'; // Hide button otherwise
             }
         }
 
