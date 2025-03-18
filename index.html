@@ -6,7 +6,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;300;400;500;600;700&display=swap"
         rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zena</title>
+    <title>Brantuit AI</title>
     <style>
         body {
             font-family: Kanit, sans-serif;
@@ -363,6 +363,10 @@
 
         #about .about-section:last-of-type {
             text-align: left;
+        }
+
+        #aboutText{
+            width: 475px;
         }
 
         #about .about-title {
@@ -773,7 +777,9 @@
         }
 
         @media (max-width: 1000px) {
-
+            #aboutText{
+                width: unset;
+            }
             #team .advantage-brand-section {
                 width: 100%;
             }
@@ -894,14 +900,11 @@
 
             .advantage-brand {
                 width: 100%;
-            }
-
-            .advantage-brand:nth-child(even) {
-                flex-direction: column;
-            }
-
-            .advantage-brand:nth-child(odd) {
                 flex-direction: column-reverse;
+            }
+
+            #advantage-1 .advantage-brand{
+                flex-direction: column;
             }
 
             #about .about-section img,
@@ -935,11 +938,6 @@
 
             #about .about-section .about-para.justified {
                 text-align: justify;
-            }
-
-            #advantage .advantage-brand {
-                width: 90%;
-                flex-direction: column-reverse;
             }
 
             #advantage-3 .advantage-title {
