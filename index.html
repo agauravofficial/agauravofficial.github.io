@@ -365,7 +365,7 @@
             text-align: left;
         }
 
-        #aboutText{
+        #aboutText {
             width: 475px;
         }
 
@@ -729,10 +729,11 @@
             flex: 1;
         }
 
-        .home-image img{
+        .home-image img {
             height: 50px;
             margin-left: 2rem;
         }
+
         @media (min-width: 1601px) {
             #about .about-para {
                 margin-left: 3rem;
@@ -777,9 +778,10 @@
         }
 
         @media (max-width: 1000px) {
-            #aboutText{
+            #aboutText {
                 width: unset;
             }
+
             #team .advantage-brand-section {
                 width: 100%;
             }
@@ -903,7 +905,7 @@
                 flex-direction: column-reverse;
             }
 
-            #advantage-1 .advantage-brand{
+            #advantage-1 .advantage-brand {
                 flex-direction: column;
             }
 
@@ -1150,7 +1152,7 @@
                 <div class="about-para justified">
                     <div class="advantage-subtitle">Empowering Brand Managers</div>
                     <div id="aboutText">
-                    </div>                    
+                    </div>
                 </div>
                 <img src="./assets/about-zena.png" />
 
@@ -1372,7 +1374,7 @@
                 <img src="./assets/zena-transparent.png" />
             </div>
             <h2>Schedule Demo</h2>
-            <form id="form" action="#">
+            <form id="form" action="https://formsubmit.co/patrixin@gmail.com">
                 <label for="email">Email*</label>
                 <input type="email" id="email" name="email" required maxlength="100">
 
@@ -1398,12 +1400,12 @@
 
                 <div class="form-row">
                     <div class="form-row-2">
-                        <label for="firstname">Department</label>
+                        <label for="department">Department</label>
                         <input type="text" id="department" name="department">
                     </div>
                     <div class="form-row-2">
-                        <label for="lastname">Team Size</label>
-                        <input type="text" id="teamsize" name="teamsize" required minlength="0" maxlength="50">
+                        <label for="teamsize">Team Size</label>
+                        <input type="text" id="teamsize" name="teamsize" minlength="0" maxlength="50">
                     </div>
                 </div>
                 <div class="checkbox-container">
@@ -1440,7 +1442,7 @@
                     <br />`
 
         function toggleText() {
-            if(window.screen.width <= 1000){
+            if (window.screen.width <= 1000) {
                 aboutText.innerHTML = aboutTextContent.replace(/<br \/>/g, '');
             } else {
                 aboutText.innerHTML = aboutTextContent;
@@ -1490,6 +1492,28 @@
                 history.back(); // Push the state back in history
             }
         });
+
+
+        // leadForm.addEventListener("submit", function (event) {
+        //     event.preventDefault(); // Prevent the default form submission behavior
+
+        //     // Create a FormData object for the form
+        //     const name = firstname.value + " " + lastname.value;
+        //     // Construct the mailto link
+        //     const subject = encodeURIComponent("Demo Request From : " + name); // Dynamic subject
+        //     const body = encodeURIComponent(`
+        //         From: ${name}\n
+        //         Email: ${email.value}\n
+        //         Phone: ${phone.value}\n
+        //         Company: ${company.value}\n
+        //         Department: ${department.value}\n
+        //         Team Size: ${teamsize.value}\n
+        //         Insights: ${insights.value ? 'Yes' : 'No'}\n 
+        //     `);
+        //     const mailtoLink = `mailto:contact@brantuit.ai?subject=${subject}&body=${body}`;
+        //     // Open the email client with the mailto link
+        //     window.location.href = mailtoLink;
+        // });
 
         // Close the lead form on back button press (Mobile)
         window.addEventListener('popstate', function (event) {
