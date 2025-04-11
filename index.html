@@ -1416,7 +1416,7 @@
                     <button class="submit-button" type="submit">Schedule Demo</button>
                 </div>
             </form>
-            <h2 id="submittedMessage" style="display: none;text-align:center;color:#cc4b4b">Form Submitted Successfully!</h2>
+            <h2 id="submittedMessage" style="display: none;text-align:center;"></h2>
         </div>
     </div>
 
@@ -1512,7 +1512,7 @@
                     submittedMessage.innerHTML = "We are unable to process your request. Please try again later."
                     submittedMessage.style.color = "#cc4b4b";
                 }
-                form.style.visibility = "none"; // Hide the form
+                form.style.visibility = "hidden"; // Hide the form
                 form.style.height = "50vh"; // Hide the form
                 form.style.overflow = "hidden"; // Hide the form
                 submittedMessage.style.display = "block";
