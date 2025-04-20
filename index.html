@@ -1289,16 +1289,6 @@
                         <!-- <img src="./assets/youtube.png"> -->
                     </div>
                 </div>
-                <div class="team-bubble" onclick="showPopup('Srinivas Raghavan')"><img
-                        src='./assets/team-4.png' />Srinivas Raghavan<p class="member-designation">Chief Technical
-                        Officer</p>
-                    <div class="team-social">
-                        <img src="./assets/linkedin.png" onclick="navigateToSocial(this)" name="Srinivas Raghavan"
-                            type="linkedin">
-                        <!-- <img src="./assets/twitter.png"> -->
-                        <!-- <img src="./assets/youtube.png"> -->
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -1379,8 +1369,9 @@
                 <input type="email" id="email" name="email" required maxlength="100">
 
                 <label for="phone">Phone*</label>
-                <input type="tel" id="phone" name="phone" pattern="^\+?[0-9]{1,4}?[-. ]?(?:[0-9]{1,4})[-. ]?(?:[0-9]{1,4})[-. ]?(?:[0-9]{1,9})$" required>
-        
+                <input type="tel" id="phone" name="phone"
+                    pattern="^\+?[0-9]{1,4}?[-. ]?(?:[0-9]{1,4})[-. ]?(?:[0-9]{1,4})[-. ]?(?:[0-9]{1,9})$" required>
+
                 <div class="form-row">
                     <div class="form-row-2">
                         <label for="firstname">First Name*</label>
@@ -1494,49 +1485,16 @@
         leadForm.addEventListener("submit", function (event) {
             event.preventDefault(); // Prevent the default form submission behavior
 
-            const xhr = new XMLHttpRequest();
 
-            // Open a connection to the API endpoint
-            xhr.open('POST', 'https://zenaapi-fkdtgwfadydndxdq.canadacentral-01.azurewebsites.net/api/Lead', true);
+            const subject = encodeURIComponent("Schedule Demo Request");
+            const body = encodeURIComponent(
+                `Email: ${email.value}\nFirst Name: ${firstname.value}\nLast Name: ${lastname.value}\nPhone: ${phone.value}\nCompany: ${company.value}\nDepartment: ${department.value}\nTeam Size: ${teamsize.value}\nSign Up for Insights: ${insights.value === 'checked'}`
+            );
 
-            // Set the request headers
-            xhr.setRequestHeader('Content-Type', 'application/json');
-            // Handle the response
-            xhr.onload = function () {
-                if (xhr.status >= 200 && xhr.status < 300) {
-                    console.log('Response:', xhr.responseText); // Log the response
-                    submittedMessage.innerHTML = "Thank You for contacting us. We will get back to you soon."
-                    submittedMessage.style.color = "#4caf50;";
-                } else {
-                    console.log('Error:', xhr.status, xhr.statusText); // Log errors
-                    submittedMessage.innerHTML = "We are unable to process your request. Please try again later."
-                    submittedMessage.style.color = "#cc4b4b";
-                }
-                form.style.visibility = "hidden"; // Hide the form
-                form.style.height = "50vh"; // Hide the form
-                form.style.overflow = "hidden"; // Hide the form
-                submittedMessage.style.display = "block";
-            };
+            const mailtoLink = `mailto:contact@brantuit.ai?subject=${subject}&body=${body}`;
 
-            // Handle any network errors
-            xhr.onerror = function () {
-                alert('Network error occurred.');
-            };
-
-            const data = {
-                Email: email.value,
-                FirstName: firstname.value,
-                LastName: lastname.value,
-                Phone: phone.value,
-                Company: company.value,
-                Department: department.value,
-                TeamSize: teamsize.value,
-                SignUpForInsights: insights.value === 'checked'
-            };
-
-            // Send the POST request with JSON data
-            xhr.send(JSON.stringify(data));
-
+            // Open mail client with pre-filled email
+            window.location.href = mailtoLink;
         });
 
         // Close the lead form on back button press (Mobile)
@@ -1640,19 +1598,6 @@ Previously, as Global President for Wyeth Consumer Healthcare, Doug was responsi
 ​<br/><br/>Lisa has a BS in Chemistry and Math from Montclair State University, and an MBA from Rutgers.`,
                 links: {
                     linkedin: 'https://www.linkedin.com/in/lisacbuono/'
-                }
-            },
-            'Srinivas Raghavan': {
-                image: 'team-4.png',
-                designation: 'Cheif Technical Officer',
-                details: `As Chief Technology Officer, Srinivas Raghavan led the engineering team in designing and developing Zena’s intelligent platform, bringing together expertise in business strategy, technology, human experience, and AI/ML. His deep understanding of innovation, automation, and user-centric design played a pivotal role in shaping Zena as a transformative virtual brand assistant, making brand management more intelligent and intuitive.​
-​<br/><br/>With a career spanning technology leadership and strategic consulting, Srinivas has worked extensively in corporate innovation, organizational development, and product transformation. Prior to Zena, he was Senior Director of Business Development at Mindlance, where he designed and launched the Smart Technology Innovation Program for Qualcomm Inc.. As CTO of ReadySet Surgical, he developed the company’s technology strategy and roadmap, leading the development of its end-to-end surgical supply chain platform.​
-​<br/><br/>Srinivas holds an MS and Ph.D. in Computer Science from The Ohio State University, along with an MBA in Innovation & Strategy from the University of California, San Diego. He served for 10 years as an Adjunct Professor of Wireless Health at Case Western Reserve University, where he co-developed its Graduate Studies program in Digital Health.​
-​<br/><br/>As CTO, Srinivas led the team of engineers in all aspects of the design and development of Zena’s intelligent platform. His combined background in business strategy, technology strategy, human experience and AI/ML expertise was pivotal in the creation of Zena as a transformative “virtual brand assistant” technology.  ​
-​<br/><br/>Srinivas is a seasoned business executive with an extensive career in strategy consulting particularly in the areas of innovation, human experience, organizational development, strategic alignment, corporate innovation, business transformation, global competency, and new product development. But he’s also a seasoned technology executive. As Sr. Director of Business Development for Mindlance, Srinivas designed and launched the Smart Technology Innovation Program for Qualcomm Inc. As CTO for ReadySet Surgical, he developed the company’s technology strategy and roadmap for its end-to-end surgical supply chain service platform.​
-​<br/><br/>Srinivas received his MS and Ph.D. from The Ohio State University in Computer Science, and his MBA from the University of California, San Diego, specializing in Innovation and Strategy. He served as Adjunct Professor of Wireless Health at Case Western Reserve University for 10 years where he co-developed its program of Graduate Studies.`,
-                links: {
-                    linkedin: 'https://www.linkedin.com/in/sraghavan108/'
                 }
             }
         }
